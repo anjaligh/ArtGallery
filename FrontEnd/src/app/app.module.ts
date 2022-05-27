@@ -16,6 +16,7 @@ import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AbstractComponent,
     WatercolorComponent,
     AcrylicComponent,
-    MuralComponent
+    MuralComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
