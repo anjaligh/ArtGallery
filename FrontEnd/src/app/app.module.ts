@@ -14,6 +14,16 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { SellerComponent } from './seller/seller.component';
+import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
+import { SellerprofileComponent } from './sellerprofile/sellerprofile.component';
+import { SellerhistoryComponent } from './sellerhistory/sellerhistory.component';
+import { ArtistsComponent } from './artists/artists.component';
+import { ArtistComponent } from './artist/artist.component';
+import { BuyerComponent } from './buyer/buyer.component';
+import { BuyerhistoryComponent } from './buyerhistory/buyerhistory.component';
+import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +38,17 @@ import { MuralComponent } from './mural/mural.component';
     AbstractComponent,
     WatercolorComponent,
     AcrylicComponent,
-    MuralComponent
+    MuralComponent,
+    SellerComponent,
+    SellerwishlistComponent,
+    SellerprofileComponent,
+    SellerhistoryComponent,
+    ArtistsComponent,
+    ArtistComponent,
+    BuyerComponent,
+    BuyerhistoryComponent,
+    BuyerwishlistComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

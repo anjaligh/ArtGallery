@@ -1,0 +1,12 @@
+h2{
+    text-align: center;
+    padding-top: 3% ;
+    padding-bottom: 3%;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+.container-fluid{
+  padding-bottom: 9%;
+}
