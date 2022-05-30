@@ -1,0 +1,17 @@
+.navbar{
+    position: absolute;
+    z-index: 5;
+  }
+.navbar-brand{
+    padding-right: 8vw;
+    padding-left: 6vw;
+}
+.navbar-brand img{
+    z-index: 2;
+}
+.nav-item{
+    padding-right: 4vw;
+}
+.active{
+    font-weight: bold;
+}

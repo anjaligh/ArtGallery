@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Tapestry&display=swap');
 body{
     margin: 0px;
     padding: 0px;
 }
 .container1{
     margin: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 .headline{
     position: absolute;
@@ -14,23 +20,6 @@ body{
     font-weight: 800;
     z-index:2 ;
     left: 37vw;
-}
-.navbar{
-    position: absolute;
-    z-index: 5;
-  }
-.navbar-brand{
-    padding-right: 8vw;
-    padding-left: 6vw;
-}
-.navbar-brand img{
-    z-index: 2;
-}
-.nav-item{
-    padding-right: 4vw;
-}
-.active{
-    font-weight: bold;
 }
 .carousel-item{
     margin-top: 0px;
@@ -115,7 +104,7 @@ br{
     padding: 5px;
     margin-right: 10px;
 }
-.row{
+.row1{
     position: relative;
     top: -50px;
     margin-left: 130px;
@@ -130,3 +119,11 @@ br{
         font-size:12px;
     }
 }
+.carousel1{
+    background: #AB773D;
+  }
+  .acrylic
+  {
+      text-align: center;
+      
+  }
