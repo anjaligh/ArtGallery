@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SellerComponent } from './seller/seller.component';
 import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
@@ -43,6 +47,7 @@ import { HeaderComponent } from './header/header.component';
     WatercolorComponent,
     AcrylicComponent,
     MuralComponent,
+    FooterComponent,
     SellerComponent,
     SellerwishlistComponent,
     SellerprofileComponent,
@@ -54,10 +59,14 @@ import { HeaderComponent } from './header/header.component';
     BuyerwishlistComponent,
     AdminComponent,
     HeaderComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    SlickCarouselModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
