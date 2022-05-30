@@ -14,6 +14,7 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+
 import { SellerComponent } from './seller/seller.component';
 import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
 import { SellerprofileComponent } from './sellerprofile/sellerprofile.component';
@@ -24,6 +25,9 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { BuyerhistoryComponent } from './buyerhistory/buyerhistory.component';
 import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component';
 import { AdminComponent } from './admin/admin.component';
+
+import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +52,8 @@ import { AdminComponent } from './admin/admin.component';
     BuyerComponent,
     BuyerhistoryComponent,
     BuyerwishlistComponent,
-    AdminComponent
+    AdminComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
