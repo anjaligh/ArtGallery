@@ -1,1 +1,69 @@
-<p>register works!</p>
+<body>
+    <div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <h1>Fusion Arts</h1>
+                <p>Earth without art is just “eh”<br>Interactions between the elements and principles <br>of art help
+                    artists to organize sensorially pleasing works of art while also giving viewers a framework
+                    within which to analyze and discuss aesthetic ideas.</p>
+                
+                
+
+            </div>
+        </div>
+
+
+        <div class="right">
+            <h5 class="register">Create account</h5><br><br>
+
+
+
+
+            <form>
+                <div class="inputs">
+                    <label><b>Name</b></label>
+                    <input id="username" type="text" required><br><br>
+                   
+                    <label><b>Email ID</b></label> <input id="email" type="email" required><br><br>
+
+
+                    <label><b>Password</b></label> <input id="password" type="password" required>
+                    <br><br>
+                   
+                    <label><b>Category<h3></h3> <span></span>
+                        <p></p>
+                    </b></label><br><br>
+
+
+                <select name="category" id="category" required><br>
+                    <option *ngFor="let i of category">{{i}}</option>
+                   
+
+                </select>
+                
+            
+
+            <br><br>
+
+                </div>
+
+                <br><br>
+                <button class="register" onclick="loginvalidation(login)">Register</button><br><br>
+                <div>
+                    <p> <a href="/login">Already have an account?</a></p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
