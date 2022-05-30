@@ -9,3 +9,7 @@ h3{
 h2{
     padding: 2%;
 }
+hr{
+    border: 3px solid #a74086;
+    background-color: #a74086;
+  }
