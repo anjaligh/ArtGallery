@@ -28,7 +28,7 @@
 
 
 
-            <form  class="form_group field" formGroup="registerForm"  (ngSubmit)="onSubmit()">
+            <form  class="form_group field" [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
                 <div class="inputs">
                     <label><b>Name</b></label>
                     <input id="name" name="name" formControlName="name" type="text" required><br><br>
@@ -49,7 +49,7 @@
                     *ngIf="registerForm.controls['email1'].touched && registerForm.controls['email1'].errors?.['email']">
                     Enter a valid email address
                 </span><br>
-                    <label><b>Password</b></label> <input id="password" name="'password" formControlName="password" type="password" required>
+                    <label><b>Password</b></label> <input id="password" name="'password" formControlName="password" type="password" required><br><br>
                     <span class="text-danger"
                     *ngIf="(registerForm.controls['password'].touched||submitted) && registerForm.controls['password'].errors?.['required']">
                     Password is required
