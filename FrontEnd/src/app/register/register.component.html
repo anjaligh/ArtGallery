@@ -16,8 +16,7 @@
                 <p>Earth without art is just “eh”<br>Interactions between the elements and principles <br>of art help
                     artists to organize sensorially pleasing works of art while also giving viewers a framework
                     within which to analyze and discuss aesthetic ideas.</p>
-                
-                
+              
 
             </div>
         </div>
@@ -29,39 +28,58 @@
 
 
 
-            <form>
+            <form  class="form_group field" formGroup="registerForm"  (ngSubmit)="onSubmit()">
                 <div class="inputs">
                     <label><b>Name</b></label>
-                    <input id="username" type="text" required><br><br>
-                   
-                    <label><b>Email ID</b></label> <input id="email" type="email" required><br><br>
-
-
-                    <label><b>Password</b></label> <input id="password" type="password" required>
+                    <input id="name" name="name" formControlName="name" type="text" required><br><br>
+                    <span class="text-danger"
+                    *ngIf="(registerForm.controls['name'].touched||submitted) && registerForm.controls['name'].errors?.['required']">
+                    Name  is required,
+                </span>
+                <span class="text-danger"
+                *ngIf="registerForm.controls['name'].touched && registerForm.controls['name'].errors?.['pattern'] ">
+            Invalid name.
+            </span><br>
+                    <label><b>Email ID</b></label> <input id="email1" name='email1' formControlName="email1" type="email" required><br><br>
+                    <span class="text-danger"
+                    *ngIf="(registerForm.controls['email1'].touched||submitted) && registerForm.controls['email1'].errors?.['required']">
+                    Email is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.controls['email1'].touched && registerForm.controls['email1'].errors?.['email']">
+                    Enter a valid email address
+                </span><br>
+                    <label><b>Password</b></label> <input id="password" name="'password" formControlName="password" type="password" required>
+                    <span class="text-danger"
+                    *ngIf="(registerForm.controls['password'].touched||submitted) && registerForm.controls['password'].errors?.['required']">
+                    Password is required
+                </span>
+                <span class="text-danger"
+                *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].errors?.['invalidPassword']">
+                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                                letter and 1 number
+            </span>
                     <br><br>
-                   
-                    <label><b>Category<h3></h3> <span></span>
-                        <p></p>
+                    <label for="userole"><b>User Role<h3></h3> <span></span>
+                        <p></p> 
                     </b></label><br><br>
 
-
-                <select name="category" id="category" required><br>
-                    <option *ngFor="let i of category">{{i}}</option>
                    
-
+                <select name="userrole" id="userrole" formControlName="category" required><br>
+                    <option value="Buyer">Buyer</option>
+                    <option value="Seller">Seller</option>
                 </select>
-                
-            
-
+               <span class="text-danger"
+               *ngIf="(registerForm.controls['userrole'].touched||submitted) && registerForm.controls['userrole'].errors?.['required']">
+               User role is required 
+           </span>
             <br><br>
-
-                </div>
-
-                <br><br>
-                <button class="register" onclick="loginvalidation(login)">Register</button><br><br>
+            
+                   
+                <button class="register" type="submit">Register</button><br><br>
                 <div>
                     <p> <a href="/login">Already have an account?</a></p>
-                </div>
+                </div></div>
             </form>
         </div>
 
