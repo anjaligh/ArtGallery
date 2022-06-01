@@ -27,6 +27,7 @@ import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component'
 import { AdminComponent } from './admin/admin.component';
 
 import { HeaderComponent } from './header/header.component';
+import { AddworkformComponent } from './addworkform/addworkform.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { HeaderComponent } from './header/header.component';
     BuyerhistoryComponent,
     BuyerwishlistComponent,
     AdminComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddworkformComponent
   ],
   imports: [
     BrowserModule,
