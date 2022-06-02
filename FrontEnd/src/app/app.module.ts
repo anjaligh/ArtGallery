@@ -16,6 +16,8 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { HeaderComponent } from './header/header.component';
+import { ReactiveFormsModule  } from '@angular/forms';
 
 import { ProductComponent } from './product/product.component';
 
@@ -68,6 +70,7 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
     SlickCarouselModule,
