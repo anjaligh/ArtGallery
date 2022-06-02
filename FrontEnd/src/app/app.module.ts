@@ -14,6 +14,7 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { CharcoalComponent } from './charcoal/charcoal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MuralComponent } from './mural/mural.component';
     AbstractComponent,
     WatercolorComponent,
     AcrylicComponent,
-    MuralComponent
+    MuralComponent,
+    CharcoalComponent
   ],
   imports: [
     BrowserModule,
