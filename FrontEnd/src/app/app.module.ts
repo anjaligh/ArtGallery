@@ -18,6 +18,7 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { CharcoalComponent } from './charcoal/charcoal.component';
 import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule  } from '@angular/forms';
 
@@ -56,6 +57,7 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
     WatercolorComponent,
     AcrylicComponent,
     MuralComponent,
+    CharcoalComponent,
     ProductComponent,
     FooterComponent,
     SellerComponent,
