@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,14 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { HeaderComponent } from './header/header.component';
+import { ReactiveFormsModule  } from '@angular/forms';
+
+import { ProductComponent } from './product/product.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SellerComponent } from './seller/seller.component';
 import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
@@ -46,6 +56,8 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
     WatercolorComponent,
     AcrylicComponent,
     MuralComponent,
+    ProductComponent,
+    FooterComponent,
     SellerComponent,
     SellerwishlistComponent,
     SellerprofileComponent,
@@ -63,7 +75,12 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    SlickCarouselModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

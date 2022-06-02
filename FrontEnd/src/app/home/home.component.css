@@ -104,7 +104,7 @@ br{
     padding: 5px;
     margin-right: 10px;
 }
-.row{
+.row1{
     position: relative;
     top: -50px;
     margin-left: 130px;
@@ -119,3 +119,11 @@ br{
         font-size:12px;
     }
 }
+.carousel1{
+    background: #AB773D;
+  }
+  .acrylic
+  {
+      text-align: center;
+      
+  }

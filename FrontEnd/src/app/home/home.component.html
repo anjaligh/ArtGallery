@@ -35,7 +35,7 @@
       <div class="strip1">
         <h1 class="lead" style="padding-top: 50px;">Featured Collections</h1>
       </div>
-      <div class="row">
+      <div class="row1 row">
         <div class="card" style="width: 11rem;">
           <img src="{{CardImages[0]}}" class="card-img-top" alt="...">
           <div class="card-body">
@@ -74,54 +74,83 @@
         </div>
       </div>
       <br><br>
-      <div class="strip1-narrow">
-      </div>
+      <!-- <div class="strip1-narrow">
+      </div> -->
     </div>
     <br>
-    <div class="strip2">
+    <div class="strip2"style="height: 150px;">
       <h1 style="padding-top:50px ;">Most Popular Paintings</h1>
       <!-- <h1 style="padding-top:100px ;"></h1> -->
     </div>
-    <div class="row">
-      <div class="card" style="width: 11rem;">
-        <img src="{{CardImages[0]}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href="#" class="btn-card btn">{{CardNames[0]}}</a>
+    <br>
+    <div class="lightbox">
+      <div class="row">
+        <div class="col-lg-3">
+          <a href=""><img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Slides/1.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/1.webp"
+            alt="Table Full of Spices"
+            class="w-100 mb-2 mb-md-4 shadow-1-strong rounded"
+          /></a>
+          <a href=""><img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Square/1.webp"
+            alt="Coconut with Strawberries"
+            class="w-100 shadow-1-strong rounded"
+          /></a>
         </div>
-      </div>
-      <div class="card" style="width: 11rem;">
-        <img src="{{CardImages[1]}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href="#" class="btn-card btn">{{CardNames[1]}}</a>
+        <div class="col-lg-3">
+          <a href=""><img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Vertical/1.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Vertical/1.webp"
+            alt="Dark Roast Iced Coffee"
+            class="w-100 shadow-1-strong rounded"
+          /></a>
         </div>
-      </div>
-      <div class="card" style="width: 11rem;">
-        <img src="{{CardImages[2]}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href="#" class="btn-card btn">{{CardNames[2]}}</a>
+        <div class="col-lg-3">
+          <a href=""><img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Slides/1.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/1.webp"
+            alt="Table Full of Spices"
+            class="w-100 mb-2 mb-md-4 shadow-1-strong rounded"
+          /></a>
+          <a href=""><img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Square/1.webp"
+            alt="Coconut with Strawberries"
+            class="w-100 shadow-1-strong rounded"
+          /></a>
         </div>
-      </div>
-      <div class="card" style="width: 11rem;">
-        <img src="{{CardImages[3]}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href="#" class="btn-card btn">{{CardNames[3]}}</a>
-        </div>
-      </div>
-      <div class="card" style="width: 11rem;">
-        <img src="{{CardImages[4]}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href="#" class="btn-card btn">{{CardNames[4]}}</a>
-        </div>
-      </div>
-      <div class="card" style="width: 11rem;">
-        <img src="{{CardImages[5]}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href="#" class="btn-card btn">{{CardNames[5]}}</a>
+        <div class="col-lg-3">
+          <a href=""><img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Vertical/1.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Vertical/1.webp"
+            alt="Dark Roast Iced Coffee"
+            class="w-100 shadow-1-strong rounded"
+          /></a>
         </div>
       </div>
     </div>
     <br><br>
-    <div class="strip2-narrow">
+    <!-- <div class="strip2-narrow">
+    </div> -->
+<!-- Gallery -->
+
+<!-- Gallery -->
+
+    <div class="strip2">
+      <h1 style="padding-top:50px ;">Know Our Artists</h1>
+      <!-- <h1 style="padding-top:100px ;"></h1> -->
     </div>
+  <ngx-slick-carousel class="carousel" 
+    #slickModal="slick-carousel" 
+    [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+    <a href=""><img src="{{ slide.img }}" alt="" width="300px" height="300px"></a> 
+    </div>
+  </ngx-slick-carousel>
+  <br><br>
+
+
 </div>
 
