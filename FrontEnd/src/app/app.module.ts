@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +19,29 @@ import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
 import { CharcoalComponent } from './charcoal/charcoal.component';
+import { HeaderComponent } from './header/header.component';
+import { ReactiveFormsModule  } from '@angular/forms';
+
+import { ProductComponent } from './product/product.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { SellerComponent } from './seller/seller.component';
+import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
+import { SellerprofileComponent } from './sellerprofile/sellerprofile.component';
+import { SellerhistoryComponent } from './sellerhistory/sellerhistory.component';
+import { ArtistsComponent } from './artists/artists.component';
+import { ArtistComponent } from './artist/artist.component';
+import { BuyerComponent } from './buyer/buyer.component';
+import { BuyerhistoryComponent } from './buyerhistory/buyerhistory.component';
+import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component';
+import { AdminComponent } from './admin/admin.component';
+
+import { HeaderComponent } from './header/header.component';
+import { AddworkformComponent } from './addworkform/addworkform.component';
+
 
 @NgModule({
   declarations: [
@@ -30,11 +57,32 @@ import { CharcoalComponent } from './charcoal/charcoal.component';
     WatercolorComponent,
     AcrylicComponent,
     MuralComponent,
-    CharcoalComponent
+    CharcoalComponent,
+    ProductComponent,
+    FooterComponent,
+    SellerComponent,
+    SellerwishlistComponent,
+    SellerprofileComponent,
+    SellerhistoryComponent,
+    ArtistsComponent,
+    ArtistComponent,
+    BuyerComponent,
+    BuyerhistoryComponent,
+    BuyerwishlistComponent,
+    AdminComponent,
+    HeaderComponent,
+    AddworkformComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    SlickCarouselModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

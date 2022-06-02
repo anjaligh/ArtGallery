@@ -11,6 +11,8 @@ import { NftComponent } from './nft/nft.component';
 import { PastelComponent } from './pastel/pastel.component';
 import { RegisterComponent } from './register/register.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
+import { ProductComponent } from './product/product.component';
+
 
 
 const routes: Routes = [
@@ -25,6 +27,7 @@ const routes: Routes = [
   {path:'contactus',component:ContactusComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent}
+
 ];
 
 @NgModule({

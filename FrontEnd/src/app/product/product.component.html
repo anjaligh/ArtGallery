@@ -1,0 +1,121 @@
+<div class="container1 " style="background-image: linear-gradient(135deg,#a74086 10%,#FAB2FF 100%);">
+    <div class="row">
+      <div class="col-md-8">
+        <img src="https://picsum.photos/id/1042/200/300/#1003" alt="" style="width: 80%;height:80%">
+      </div>
+      <div class="col-md-4" id="content">
+        <div class="card" id="card1">
+          <div class="card-body">
+            <h4>Wonderful Dreamland</h4>
+            <p style="line-height: 0.7">by <a href="#" style="color: black;">Luc Villard</a> France</p><br>
+            <p style="line-height:0.2">Acrylic on canvas</p>
+            <p style="line-height: 0.2">105x155 cm</p><br>
+            <hr style="margin-top: 0.5em">
+            <p>PRICE</p>
+            <label for="rupees" style="color: teal;font-size:50px;">&#8377;2500</label>
+            <select name="rupees" id="rupees">
+              <option value="INR">INR</option>
+              <option value="AED">AED</option>
+              <option value="MXN">MXN</option>
+            </select>
+            <br><br>
+            <div>
+              <button type="button" class="btn btn-primary btn-block" style="width:80%;text-align: center;">ADD TO
+                CART</button>
+              <br><br>
+  
+              <button type="button" class="btn btn-secondary" style="width:80%;text-align: center;">Add to
+                Favorites</button>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+    </div>
+    <div class="modal fade" id="modal1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title">Abstract1</h1>
+          </div>
+          <div class="modal-body">
+            <img src="/assets/abstract1.jpg" alt="" class="image-responsive">
+  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" id="artist">
+      <input type="checkbox" id="check">
+  
+      <h4 style="color: red">About the Artwork</h4>
+      <p>Abstract painting inspired by a beautiful dream. As in a dream, in abstract painting the natural scientific
+        laws are completely or partially abandoned, there is neither consistent perspective nor space, light or
+        shadow, large or small - the impossible can become possible.
+        Wonderful Dreamland is a modern, relaxed, detailed and lively color composition in orange, yellow, blue,
+        white,magenta, pink, green, violet, lilac, beige and brown colors in front of a flat background. The
+        painting invites you to dream...</p>
+      <div class="content">
+        <p>
+  
+          The painting is stretched on a 3.8 cm deep gallery frame and can be hung without an additional frame, as
+          the picture sides are also painted
+        </p>
+      </div>
+      <label for="check" id="more">Read More</label>
+    </div>
+    <h4 id="other">Other Artworks by Luc Villard</h4>
+    
+    <div class="container-fluid" id="slick">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+        (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+          <img src="{{ slide.img }}" alt="" style="width: 300px;height:300px;background-color:paleturquoise;">
+        </div>
+      </ngx-slick-carousel>
+      <!-- <button (click)="addSlide()">Add</button>
+      <button (click)="removeSlide()">Remove</button>
+      <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+      <button (click)="slickModal.unslick()">unslick</button> -->
+  
+    </div>
+    <!-- <div class="footer-dark">
+      <footer>
+        <div class="container1">
+          <div class="row">
+            <div class="col-sm-6 col-md-3 item">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#">Web design</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Hosting</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 item">
+              <h3>About</h3>
+              <ul>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 item text">
+              <h3>Fusion Arts</h3>
+              <p>Discover the world of art and craft with Fusionarts.com.It is an online marketplace that helps art
+                collectors/lovers and enthusiasts to buy and sell art with ease from any part of the world. Fusion Arts
+                caters to original art (art investment), sculpture, digital prints, craft, home decor and many more.
+                Explore our online art gallery and grab your choice of painting or portraits or craft. Fusion arts aligns
+                with the vision of the founders to ensure that art is popular among the masses, you can read about them
+                here.</p>
+            </div>
+            <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                  class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a
+                href="#"><i class="icon ion-social-instagram"></i></a></div>
+          </div>
+          <p class="copyright">Company Name © 2018</p>
+        </div>
+      </footer>
+    </div> -->
+  </div>
