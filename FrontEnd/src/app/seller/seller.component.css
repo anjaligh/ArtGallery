@@ -3,11 +3,14 @@
   padding: 0px;
   width: 200px;
   background-color:#a74086;
-  position: fixed;
+  position:absolute;
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
+  /* z-index: -1; */
 }
-
+.background{
+  padding-top: 6.4%;
+}
 .sidebar a {
   display: block;
   color: white;
