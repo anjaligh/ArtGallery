@@ -16,6 +16,7 @@ import { SellerComponent } from './seller/seller.component';
 import { SellerprofileComponent } from './sellerprofile/sellerprofile.component';
 import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
 import { SellerhistoryComponent } from './sellerhistory/sellerhistory.component';
+import { CharcoalComponent } from './charcoal/charcoal.component';
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path:'login/seller',component:SellerComponent,children:[
                     {path:'profile',component:SellerprofileComponent},
                     {path:'wishlist',component:SellerwishlistComponent},
-                    {path:'sellerhistory',component:SellerhistoryComponent}]}
+                    {path:'sellerhistory',component:SellerhistoryComponent}]},
+  {path:'charcoal',component:CharcoalComponent}
 
 ];
 
