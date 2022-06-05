@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendDataService } from '../services/backend-data.service';
+import  {ArtModel} from '../services/ArtModel'
+
 
 @Component({
   selector: 'app-charcoal',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./charcoal.component.css']
 })
 export class CharcoalComponent implements OnInit {
-
-  constructor() { }
+  charcoal:ArtModel[]=[]
+  constructor(private bdata:BackendDataService) { }
 
   ngOnInit(): void {
-  }
-
+    this.bdata.getCharcoal().subscribe((data)=>{
+      this.charcoal=JSON.parse(JSON.stringify(data));
+      console.log(this.charcoal)
+  })
+}
 }

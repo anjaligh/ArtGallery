@@ -136,163 +136,27 @@
         </header><!-- sect-heading -->
         
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" *ngFor="let i of pastel">
                 <figure class="card card-product-grid">
-                    <div class="img-wrap"> 
+                    <div class="img-wrap">
                         <span class="badge badge-danger"> NEW </span>
-                        <img src="assets/images/items/1.jpg">
+                        <img [src]=i.image>
                     </div> <!-- img-wrap.// -->
                     <figcaption class="info-wrap">
                         <div class="fix-height">
-                            <a href="#" class="title">Great item name goes here</a>
+                            <a routerLink="#" class="title">{{i.name}}</a>
                             <div class="price-wrap mt-2">
-                                <span class="price">Rs 1280</span>
+                                <span class="price">Rs {{i.price}}</span>
                                 <del class="price-old">Rs 1980</del>
                             </div> <!-- price-wrap.// -->
                         </div>
-                        <a href="#" class="btn btn-block btn-primary">Add to cart </a>
+                        <a routerLink="#" class="btn btn-block btn-primary">View Details</a>
                     </figcaption>
                 </figure>
             </div> <!-- col.// -->
-        
-            <div class="col-md-4">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap"> 
-                        <img src="/assets/images/items/1.jpg">
-                    </div> <!-- img-wrap.// -->
-                    <figcaption class="info-wrap">
-                        <div class="fix-height">
-                            <a href="#" class="title">Product name goes here just for demo item</a>
-                            <div class="price-wrap mt-2">
-                                <span class="price">Rs 1280</span>
-                            </div> <!-- price-wrap.// -->
-                        </div>
-                        <a href="#" class="btn btn-block btn-primary">Add to cart </a>  
-                    </figcaption>
-                </figure>
-            </div> <!-- col.// -->
-        
-            <div class="col-md-4">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap"> 
-                        <img src="/assets/images/items/2.jpg">
-                    </div> <!-- img-wrap.// -->
-                    <figcaption class="info-wrap">
-                        <div class="fix-height">
-                            <a href="#" class="title">Product name goes here just for demo item</a>
-                            <div class="price-wrap mt-2">
-                                <span class="price">Rs 1280</span>
-                            </div> <!-- price-wrap.// -->
-                        </div>
-                        <a href="#" class="btn btn-block btn-primary">Add to cart </a>  
-                    </figcaption>
-                </figure>
-            </div> <!-- col.// -->
-        
-            <div class="col-md-4">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap"> 
-                        <img src="assets/images/items/4.jpg">
-                    </div> <!-- img-wrap.// -->
-                    <figcaption class="info-wrap">
-                        <div class="fix-height">
-                            <a href="#" class="title">Product name goes here just for demo item</a>
-                            <div class="price-wrap mt-2">
-                                <span class="price">Rs 1280</span>
-                            </div> <!-- price-wrap.// -->
-                        </div>
-                        <a href="#" class="btn btn-block btn-primary">Add to cart </a>  
-                    </figcaption>
-                </figure>
-            </div> <!-- col.// -->
-        
-            <div class="col-md-4">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap"> 
-                        <img src="assets/images/items/5.jpg">
-                    </div> <!-- img-wrap.// -->
-                    <figcaption class="info-wrap">
-                        <div class="fix-height">
-                            <a href="#" class="title">Product name goes here just for demo item</a>
-                            <div class="price-wrap mt-2">
-                                <span class="price">Rs 1280</span>
-                            </div> <!-- price-wrap.// -->
-                        </div>
-                        <a href="#" class="btn btn-block btn-primary">Add to cart </a>  
-                    </figcaption>
-                </figure>
-            </div> <!-- col.// -->
-        
-            <div class="col-md-4">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap"> 
-                        <img src="assets/images/items/6.jpg">
-                    </div> <!-- img-wrap.// -->
-                    <figcaption class="info-wrap">
-                        <div class="fix-height">
-                            <a href="#" class="title">Product name goes here just for demo item</a>
-                            <div class="price-wrap mt-2">
-                                <span class="price">Rs 1280</span>
-                            </div> <!-- price-wrap.// -->
-                        </div>
-                        <a href="#" class="btn btn-block btn-primary">Add to cart </a>  
-                    </figcaption>
-                </figure>
-            </div> <!-- col.// -->
-        
-            <div class="col-md-4">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap"> 
-                        <img src="assets/images/items/7.jpg">
-                    </div> <!-- img-wrap.// -->
-                    <figcaption class="info-wrap">
-                        <div class="fix-height">
-                            <a href="#" class="title">Product name goes here just for demo item</a>
-                            <div class="price-wrap mt-2">
-                                <span class="price">Rs 1280</span>
-                            </div> <!-- price-wrap.// -->
-                        </div>
-                        <a href="#" class="btn btn-block btn-primary">Add to cart </a>  
-                    </figcaption>
-                </figure>
-            </div> <!-- col.// -->
-        
-            <div class="col-md-4">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap"> 
-                        <img src="assets/images/items/8.jpg">
-      
-                    </div> <!-- img-wrap.// -->
-                    <figcaption class="info-wrap">
-                        <div class="fix-height">
-                            <a href="#" class="title">Product name goes here just for demo item</a>
-                            <div class="price-wrap mt-2">
-                                <span class="price">Rs 1280</span>
-                            </div> <!-- price-wrap.// -->
-                        </div>
-                        <a href="#" class="btn btn-block btn-primary">Add to cart </a>  
-                    </figcaption>
-                </figure>
-            </div> <!-- col.// -->
-            <div class="col-md-4">
-              <figure class="card card-product-grid">
-                  <div class="img-wrap"> 
-                      <img src="assets/images/items/9.jpg">
-                  </div> <!-- img-wrap.// -->
-                  <figcaption class="info-wrap">
-                      <div class="fix-height">
-                          <a href="#" class="title">Product name goes here just for demo item</a>
-                          <div class="price-wrap mt-2">
-                              <span class="price">Rs 1280</span>
-                          </div> <!-- price-wrap.// -->
-                      </div>
-                      <a href="#" class="btn btn-block btn-primary">Add to cart </a>  
-                  </figcaption>
-              </figure>
-          </div> <!-- col.// -->
-            
         </div> <!-- row end.// -->
-        
+
+
         
         <nav aria-label="Page navigation sample">
           <ul class="pagination">
