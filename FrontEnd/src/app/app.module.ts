@@ -79,7 +79,6 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
     SlickCarouselModule,

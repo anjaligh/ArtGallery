@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
     //password:new FormControl('',Validators.compose([Validators.required, this.customValidator.patternValidator()])),
     name:new FormControl('',[Validators.required,Validators.pattern(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/), Validators.maxLength(10)]),
     email1:new FormControl('',[Validators.required, Validators.email]),
-    category:new FormControl('Buyer',Validators.required),
+    userrole:new FormControl('Buyer',Validators.required),
     password:new FormControl('',Validators.compose([Validators.required, this.customValidator.patternValidator()]))
   
     })
