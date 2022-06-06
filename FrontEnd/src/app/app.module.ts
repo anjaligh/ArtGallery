@@ -70,6 +70,10 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< Updated upstream
+=======
+    HttpClientModule,
+>>>>>>> Stashed changes
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
