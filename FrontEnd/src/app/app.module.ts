@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -16,8 +18,9 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { CharcoalComponent } from './charcoal/charcoal.component';
 import { HeaderComponent } from './header/header.component';
-import { ReactiveFormsModule  } from '@angular/forms';
+
 
 import { ProductComponent } from './product/product.component';
 
@@ -35,8 +38,9 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { BuyerhistoryComponent } from './buyerhistory/buyerhistory.component';
 import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component';
 import { AdminComponent } from './admin/admin.component';
+import { AddworkComponent } from './addwork/addwork.component';
+import { AddworkformComponent } from './addworkform/addworkform.component';
 
-import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -53,6 +57,7 @@ import { HeaderComponent } from './header/header.component';
     WatercolorComponent,
     AcrylicComponent,
     MuralComponent,
+    CharcoalComponent,
     ProductComponent,
     FooterComponent,
     SellerComponent,
@@ -65,15 +70,14 @@ import { HeaderComponent } from './header/header.component';
     BuyerhistoryComponent,
     BuyerwishlistComponent,
     AdminComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddworkComponent,
+    AddworkformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< Updated upstream
-=======
     HttpClientModule,
->>>>>>> Stashed changes
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 Images=['./assets/carousel1.jpg','./assets/carousel1.jpg'];
 CardImages=['./assets/mural.jpg','./assets/acrylic.jpg','./assets/abstract.jpeg', './assets/water.jpg','./assets/pastel.jpg','./assets/nft.jpg'];
-CardNames=['Mural','Acrylic','Abstract','Watercolor','Pastel','NFTs'];
+CardNames=['Mural','Acrylic','Abstract','Watercolor','Pastel','Charcoal'];
 slides = [
   { img: 'https://via.placeholder.com/600.png/09f/fff' },
   { img: 'https://via.placeholder.com/600.png/021/fff' },
