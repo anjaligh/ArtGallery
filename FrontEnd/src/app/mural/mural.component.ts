@@ -14,7 +14,10 @@ export class MuralComponent implements OnInit {
 
   ngOnInit(): void {
     this.bdata.getMural().subscribe((data)=>{
+      console.log("mural");
+      console.log(data);
       this.mural=JSON.parse(JSON.stringify(data));
+      console.log("mural");
       console.log(this.mural)
   })
 }

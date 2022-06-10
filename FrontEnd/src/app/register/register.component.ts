@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
 import { CustomvalidatorsService } from '../services/customvalidators.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
 
  
-  constructor(private fb:FormBuilder,private customValidator: CustomvalidatorsService){}
+  constructor(private fb:FormBuilder,private customValidator: CustomvalidatorsService, private _router:Router){}
   registerForm=new FormGroup({
   
     //password:new FormControl('',Validators.compose([Validators.required, this.customValidator.patternValidator()])),
@@ -31,7 +32,7 @@ export class RegisterComponent implements OnInit {
       if (this.registerForm.valid) {
         alert('Form Submitted succesfully!!!\n Check the values in browser console.');
         console.table(this.registerForm.value);
-        
+        this._router.navigate(['login'])
       }
   
     }}
