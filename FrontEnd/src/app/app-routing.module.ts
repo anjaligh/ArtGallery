@@ -12,6 +12,13 @@ import { PastelComponent } from './pastel/pastel.component';
 import { RegisterComponent } from './register/register.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { ProductComponent } from './product/product.component';
+import { SellerComponent } from './seller/seller.component';
+import { SellerprofileComponent } from './sellerprofile/sellerprofile.component';
+import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
+import { SellerhistoryComponent } from './sellerhistory/sellerhistory.component';
+import { CharcoalComponent } from './charcoal/charcoal.component';
+import { AddworkComponent } from './addwork/addwork.component';
+import { AddworkformComponent } from './addworkform/addworkform.component';
 
 
 
@@ -26,7 +33,16 @@ const routes: Routes = [
   {path:'aboutus',component:AboutusComponent},
   {path:'contactus',component:ContactusComponent},
   {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent}
+  {path:'register',component:RegisterComponent},
+  {path:'mural/product',component:ProductComponent},
+  {path:'login/seller',component:SellerComponent,children:[
+                    {path:'profile',component:SellerprofileComponent},
+                    {path:'wishlist',component:SellerwishlistComponent},
+                    {path:'sellerhistory',component:SellerhistoryComponent},
+                    {path:'addwork',component:AddworkformComponent}]},
+  {path:'charcoal',component:CharcoalComponent},
+  {path:'product',component:ProductComponent},
+  
 
 ];
 

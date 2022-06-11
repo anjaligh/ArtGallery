@@ -2,15 +2,22 @@
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
+	/* z-index: 3; */
 }
 *{
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
 }
+.footer{
+	position: relative;
+	margin-top: 1px;
+	padding: 0px;
+}
 .container{
 	max-width: 1170px;
 	margin:auto;
+
 }
 .row{
 	display: flex;

@@ -18,8 +18,9 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { CharcoalComponent } from './charcoal/charcoal.component';
 import { HeaderComponent } from './header/header.component';
-import { ReactiveFormsModule  } from '@angular/forms';
+
 
 import { ProductComponent } from './product/product.component';
 
@@ -37,9 +38,9 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { BuyerhistoryComponent } from './buyerhistory/buyerhistory.component';
 import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component';
 import { AdminComponent } from './admin/admin.component';
-
-import { HeaderComponent } from './header/header.component';
+import { AddworkComponent } from './addwork/addwork.component';
 import { AddworkformComponent } from './addworkform/addworkform.component';
+
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
     WatercolorComponent,
     AcrylicComponent,
     MuralComponent,
+    CharcoalComponent,
     ProductComponent,
     FooterComponent,
     SellerComponent,
@@ -69,13 +71,13 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
     BuyerwishlistComponent,
     AdminComponent,
     HeaderComponent,
+    AddworkComponent,
     AddworkformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,

@@ -69,7 +69,7 @@
         <div class="card" style="width: 11rem;">
           <img src="{{CardImages[5]}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <a routerLink="nft" class="btn-card btn">{{CardNames[5]}}</a>
+            <a routerLink="charcoal" class="btn-card btn">{{CardNames[5]}}</a>
           </div>
         </div>
       </div>
@@ -86,47 +86,47 @@
     <div class="lightbox">
       <div class="row">
         <div class="col-lg-3">
-          <a href=""><img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Slides/1.webp"
+          <a routerLink="mural"><img
+            src="https://s3.amazonaws.com/gallerist-live/products/46505/large/ardhanareeshwara-kerala-traditional-mural-painting.jpg?1630230037"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/1.webp"
             alt="Table Full of Spices"
-            class="w-100 mb-2 mb-md-4 shadow-1-strong rounded"
+            class="w-100 mb-2 mb-md-4 shadow-1-strong rounded" style="width:20% ;height:40%"
           /></a>
-          <a href=""><img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp"
+          <a routerLink="charcoal"><img
+            src="https://www.qagaz.com/wp-content/uploads/2018/09/25-charcoal-drawings-free-drawings-designs-download-free.jpg"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Square/1.webp"
             alt="Coconut with Strawberries"
-            class="w-100 shadow-1-strong rounded"
+            class="w-100 shadow-1-strong rounded" style="width:20% ;height:40%"
           /></a>
         </div>
         <div class="col-lg-3">
-          <a href=""><img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Vertical/1.webp"
+          <a routerLink="acrylic"><img
+            src="https://cdn11.bigcommerce.com/s-x49po/images/stencil/1280x1280/products/52781/70616/1595501208426_DEVOTION__ACRYLIC_PAINTING__ORIGINAL__SIGNED_ARTWORK__85879.1595667676.jpg?c=2"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Vertical/1.webp"
             alt="Dark Roast Iced Coffee"
-            class="w-100 shadow-1-strong rounded"
+            class="w-100 shadow-1-strong rounded"style="width:20% ;height:85%"
           /></a>
         </div>
         <div class="col-lg-3">
-          <a href=""><img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Slides/1.webp"
+          <a routerLink="abstract"><img
+            src="https://www.icanvas.com/blog/wp-content/uploads/2019/10/benefits-of-art-abstract.png"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/1.webp"
             alt="Table Full of Spices"
-            class="w-100 mb-2 mb-md-4 shadow-1-strong rounded"
+            class="w-100 mb-2 mb-md-4 shadow-1-strong rounded" style="width:20% ;height:50%"
           /></a>
-          <a href=""><img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp"
+          <a routerLink="watercolor"><img
+            src="https://webneel.com/daily/sites/default/files/images/daily/12-2013/2-watercolor-painting-by-vilas%20kulkarni.jpg"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Square/1.webp"
             alt="Coconut with Strawberries"
-            class="w-100 shadow-1-strong rounded"
+            class="w-100 shadow-1-strong rounded"style="width:20% ;height:30%"
           /></a>
         </div>
         <div class="col-lg-3">
-          <a href=""><img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Vertical/1.webp"
+          <a routerLink="pastel"><img
+            src="https://www.outdoorpainter.com/wp-content/uploads/2018/06/painting-with-pastels-What_Dreams_May_Come_12-000x16-000_072RES_Plein-Air-Pastel-NKMertz-768x1024.jpg"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Vertical/1.webp"
             alt="Dark Roast Iced Coffee"
-            class="w-100 shadow-1-strong rounded"
+            class="w-100 shadow-1-strong rounded"style="width:20% ;height:85%"
           /></a>
         </div>
       </div>
@@ -146,7 +146,8 @@
     #slickModal="slick-carousel" 
     [config]="slideConfig">
     <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-    <a href=""><img src="{{ slide.img }}" alt="" width="300px" height="300px"></a> 
+    <a href=""><img src="{{ slide.img }}" alt="" width="300px" height="300px"></a>
+    <h6>{{slide.artist}}</h6> 
     </div>
   </ngx-slick-carousel>
   <br><br>
