@@ -25,4 +25,8 @@ export class BackendDataService {
   getAcrylic() {
     return this.http.get('http://localhost:3000/acrylic')
   }
+  addPainting(data: any){
+    console.log(data);
+    return this.http.post<any>('http://localhost:3000/addwork',data)
+  }
 }

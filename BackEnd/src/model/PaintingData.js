@@ -4,10 +4,15 @@ mongoose.connect('mongodb://localhost:27017/demoArt');
 const Schema=mongoose.Schema;
 var PaintingSchema=new Schema({
     name : String,
-    artist : String,
+    email : String,
+    contact : Number,
+    address : String,
+    artistimage: String,
+    paintingname : String,
     category : String,
-    diamension : String,
     price : String,
+    dimension : String,
+    description : String,
     image : String
 });
 var PaintingData=mongoose.model('painting',PaintingSchema);

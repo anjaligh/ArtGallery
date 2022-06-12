@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { CustomvalidatorsService } from '../services/customvalidators.service';
 import { AuthservicesService } from '../services/authservices.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,6 +20,11 @@ className=""
   constructor(private fb: FormBuilder, private customValidator: CustomvalidatorsService, private regservice: AuthservicesService) { }
   registerForm = new FormGroup({
 
+ 
+  constructor(private fb:FormBuilder,private customValidator: CustomvalidatorsService, private _router:Router){}
+  registerForm=new FormGroup({
+  
+
     //password:new FormControl('',Validators.compose([Validators.required, this.customValidator.patternValidator()])),
     name: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/), Validators.maxLength(10)]),
     email1: new FormControl('', [Validators.required, Validators.email]),
@@ -27,6 +34,19 @@ className=""
   })
 
   ngOnInit(): void {
+
+    
+    }
+    onSubmit() {
+      this.submitted = true;
+      if (this.registerForm.valid) {
+        alert('Form Submitted succesfully!!!\n Check the values in browser console.');
+        console.table(this.registerForm.value);
+        this._router.navigate(['login'])
+      }
+  
+    }}
+
 
   }
   onRegister() {

@@ -1,15 +1,15 @@
-.image{
-    padding: 3%;
-    width: 75%;
-    height: 50%;
+img{
+    height: 300px;
+    width:450px;
+    padding: 1%;
 }
-h3{
-    padding: 2%;
+.container{
+    margin-top: 20px;
 }
-h2{
-    padding: 2%;
+.border{
+    border-radius: 5px;
+    width: 80%;
 }
-hr{
-    border: 3px solid #a74086;
-    background-color: #a74086;
-  }
+.content{
+    padding-left: 50px;
+}

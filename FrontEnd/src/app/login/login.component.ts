@@ -3,6 +3,7 @@ import { FormBuilder,FormGroup,FormControl,Validators } from '@angular/forms';
 import { CustomvalidatorsService } from '../services/customvalidators.service';
 import { AuthservicesService } from '../services/authservices.service';
 import {Router} from '@angular/router'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,11 @@ export class LoginComponent implements OnInit {
 
   submitted = false;
  
+
   constructor(private fb:FormBuilder,private customValidator: CustomvalidatorsService,private logservice:AuthservicesService,private router:Router ){}
+
+//   constructor(private fb:FormBuilder,private customValidator: CustomvalidatorsService,private _router:Router){}
+
   loginForm=new FormGroup({
    
       email1:new FormControl('',[Validators.required, Validators.email]),
@@ -55,6 +60,13 @@ else{
         //console.log(data, "from backend")
       )
     
+    if (this.loginForm.valid) {
+      alert('Form Submitted succesfully!!!\n Check the values in browser console.');
+      console.table(this.loginForm.value);
+      this._router.navigate(['login/seller/profile'])
+
+      
+    }
   }
   
 

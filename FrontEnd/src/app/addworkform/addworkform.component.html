@@ -1,6 +1,6 @@
 <div class="align">
   <div class="border">
-      <form [formGroup]="addWorkForm">
+      <form [formGroup]="addWorkForm"(ngSubmit)="addWork()">
           <p class="heading">Personal Information</p>
           <hr>
 
@@ -30,6 +30,11 @@
             <input type="text" class="form-control" formControlName="address"  name="address"  required >
           </div>
 
+          <div class="mb-3">
+            <label for="category" class="form-label">Upload your Image</label>
+            <input type="file" formControlName="artistimage" name="artistimage" class="form-control" accept="image/png, image/gif, image/jpeg">
+          </div>
+
           <p class="heading">Painting Details</p>
           <hr>
           <div class="mb-3">
@@ -46,12 +51,12 @@
                   <label for="category" class="form-label">Painting Category</label>
                   <select class="form-select" aria-label="Default select example" formControlName="category"  name="category"  required>
                     <option selected ></option>
-                    <option value="1">Abstract</option>
-                    <option value="2">Acrylic</option>
-                    <option value="3">Mural</option>
-                    <option value="4">NFT</option>
-                    <option value="5">Pastel</option>
-                    <option value="6">Watercolor</option>
+                    <option value="Abstract">Abstract</option>
+                    <option value="Acrylic">Acrylic</option>
+                    <option value="Mural">Mural</option>
+                    <option value="Charcoal">Charcoal</option>
+                    <option value="Pastel">Pastel</option>
+                    <option value="Watercolor">Watercolor</option>
                   </select>
                 </div>
             </div>
@@ -59,10 +64,15 @@
             <div class="col">
               <div class="mb-3">
                 <label for="category" class="form-label">Upload your work here</label>
-                <input type="file" formControlName="image" class="form-control">
+                <input type="file" formControlName="image" class="form-control" accept="image/png, image/gif, image/jpeg">
               </div>
             </div>
           </div>
+
+          <div class="mb-3">
+            <label for="dimension" class="form-label">Dimension of Painting</label>
+            <input type="text" class="form-control" required formControlName="dimension"  name="dimension"  >
+         </div>
 
           <div class="mb-3">
               <label for="price" class="form-label">Expected Price in &#8377; </label>

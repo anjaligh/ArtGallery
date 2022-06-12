@@ -17,6 +17,9 @@ import { SellerprofileComponent } from './sellerprofile/sellerprofile.component'
 import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
 import { SellerhistoryComponent } from './sellerhistory/sellerhistory.component';
 import { CharcoalComponent } from './charcoal/charcoal.component';
+import { AddworkComponent } from './addwork/addwork.component';
+import { AddworkformComponent } from './addworkform/addworkform.component';
+import { SellercartComponent } from './sellercart/sellercart.component';
 
 
 
@@ -36,8 +39,12 @@ const routes: Routes = [
   {path:'seller',component:SellerComponent,children:[
                     {path:'profile',component:SellerprofileComponent},
                     {path:'wishlist',component:SellerwishlistComponent},
-                    {path:'sellerhistory',component:SellerhistoryComponent}]},
-  {path:'charcoal',component:CharcoalComponent}
+                    {path:'sellerhistory',component:SellerhistoryComponent},
+                    {path:'addwork',component:AddworkformComponent},
+                    {path:'cart',component:SellercartComponent}]},
+  {path:'charcoal',component:CharcoalComponent},
+  {path:'product/:id/:name/:price/:dimension/:category/:artist',component:ProductComponent},
+  
 
 ];
 

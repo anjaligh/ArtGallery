@@ -1,15 +1,26 @@
-<div class="background">
-  <div class="sidebar sticky-left">
-    <h3>Hello User !!</h3>
-    <a routerLink="profile">View Profile</a>
-    <!-- <a routerLink="editprofile" >Edit Profile</a> -->
 
-    <a routerLink="addwork" >Add Your Work</a>
-    <a routerLink="sellerhistory">Your Orders</a>
-    <a routerLink="wishlist">Wish-List</a>
-  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar">
+        <div class="side-header">
+          <h1> Welcome </h1>
+          <p> User </p>
+        </div>
+        <nav class="sidenav">
+          <input type="radio" class="checkbox" name="radio" id="0" checked>
+          <label for="0" class="button"><a routerLink="profile">View Profile</a> </label>
+          <input type="radio" class="checkbox" name="radio" id="1">
+          <label for="1" class="button" ><a routerLink="cart"> My Cart</a></label>
+          <input type="radio" class="checkbox" name="radio" id="2">
+          <label for="2" class="button"><a routerLink="sellerhistory"> My Orders</a></label>
+          <input type="radio" class="checkbox" name="radio" id="3">
+          <label for="3" class="button"><a routerLink="wishlist"> Wish List</a></label>
+          <input type="radio" class="checkbox" name="radio" id="4">
+          <div class="slide"></div>
+        </nav>
+    </div>
+    </div>
+    <div class="col-md-9" style="margin-top: 85px;">
+      <router-outlet></router-outlet>
+    </div>
   
-  <div class="content">
-       <router-outlet></router-outlet>
-  </div>
-  </div>
