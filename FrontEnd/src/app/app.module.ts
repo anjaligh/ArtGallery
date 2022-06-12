@@ -40,6 +40,7 @@ import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component'
 import { AdminComponent } from './admin/admin.component';
 import { AddworkComponent } from './addwork/addwork.component';
 import { AddworkformComponent } from './addworkform/addworkform.component';
+import { SellercartComponent } from './sellercart/sellercart.component';
 
 
 
@@ -72,7 +73,8 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
     AdminComponent,
     HeaderComponent,
     AddworkComponent,
-    AddworkformComponent
+    AddworkformComponent,
+    SellercartComponent
   ],
   imports: [
     BrowserModule,

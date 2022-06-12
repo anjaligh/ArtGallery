@@ -3,6 +3,9 @@ img{
     width:450px;
     padding: 1%;
 }
+.container{
+    margin-top: 20px;
+}
 .border{
     border-radius: 5px;
     width: 80%;

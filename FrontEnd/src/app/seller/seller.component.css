@@ -2,6 +2,7 @@
   width: max(250px, 20vw);
   background: #a74086;
   height: 100vh;
+  margin-top: 85px;
 }
 
 .sidebar .side-header {
@@ -12,7 +13,6 @@
   background-position: right center;
   background-size: auto 90%;
 }
-
 .side-header h1,
 .side-header p {
   margin: 0;
@@ -31,7 +31,6 @@
   position: relative;
   margin-top: 0.3em;
 }
-
 .sidenav .button-container {
   width: 100%;
   display: contents;
@@ -49,20 +48,7 @@ a {
   text-decoration: none;
   color: black;
 }
-
 .sidenav a {
-  padding: 0px;
-  width: 200px;
-  background-color:#a74086;
-  position:absolute;
-  height: 100%;
-  /* overflow: auto; */
-  /* z-index: -1; */
-}
-.background{
-  padding-top: 6.4%;
-}
-.sidebar a {
   display: block;
   color: white;
   padding: 16px;
@@ -74,7 +60,6 @@ a {
   box-sizing: border-box;
   transition-timing-function: cubic-bezier(0, 1.04, 0, 1.14);
 }
-
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;

@@ -19,6 +19,7 @@ import { SellerhistoryComponent } from './sellerhistory/sellerhistory.component'
 import { CharcoalComponent } from './charcoal/charcoal.component';
 import { AddworkComponent } from './addwork/addwork.component';
 import { AddworkformComponent } from './addworkform/addworkform.component';
+import { SellercartComponent } from './sellercart/sellercart.component';
 
 
 
@@ -39,7 +40,8 @@ const routes: Routes = [
                     {path:'profile',component:SellerprofileComponent},
                     {path:'wishlist',component:SellerwishlistComponent},
                     {path:'sellerhistory',component:SellerhistoryComponent},
-                    {path:'addwork',component:AddworkformComponent}]},
+                    {path:'addwork',component:AddworkformComponent},
+                    {path:'cart',component:SellercartComponent}]},
   {path:'charcoal',component:CharcoalComponent},
   {path:'product',component:ProductComponent},
   
