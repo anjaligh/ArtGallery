@@ -17,11 +17,11 @@ export class RegisterComponent implements OnInit {
 className=""
 
 
-  constructor(private fb: FormBuilder, private customValidator: CustomvalidatorsService, private regservice: AuthservicesService) { }
-  registerForm = new FormGroup({
+  // constructor(private fb: FormBuilder, private customValidator: CustomvalidatorsService, private regservice: AuthservicesService) { }
+  // registerForm = new FormGroup({
 
  
-  constructor(private fb:FormBuilder,private customValidator: CustomvalidatorsService, private _router:Router){}
+  constructor(private fb:FormBuilder,private customValidator: CustomvalidatorsService, private _router:Router,private regservice: AuthservicesService){}
   registerForm=new FormGroup({
   
 
@@ -33,61 +33,58 @@ className=""
 
   })
 
-  ngOnInit(): void {
-
-    
-    }
-    onSubmit() {
-      this.submitted = true;
-      if (this.registerForm.valid) {
-        alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-        console.table(this.registerForm.value);
-        this._router.navigate(['login'])
-      }
+  ngOnInit(): void {}
+    // onSubmit() {
+    //   this.submitted = true;
+    //   if (this.registerForm.valid) {
+    //     alert('Form Submitted succesfully!!!\n Check the values in browser console.');
+    //     console.table(this.registerForm.value);
+    //     this._router.navigate(['login'])
+    //   }
   
-    }}
+    // }
 
+    onRegister() {
+      console.log(this.message);
+      this.isProcessing=true;
+      this.submitted = true;
+     
+      let data = this.registerForm.value;
+      //if (this.registerForm.valid) {
+      //alert('Form Submitted succesfully!!!\n Check the values in browser console.');
+      //console.table(this.registerForm.value);
+      this.regservice.registerData(data)
+        .subscribe(
+          res => {
+          if(res.success){
+            this.isProcessing=false;
+            this.message='Account created'
+            //alert("Account created")
+            console.log(this.message)
+            this.className='alert alert-success'
+          }else 
+          {
+            this.isProcessing=false;
+            
+            this.message=res.message;
+           //alert("Email id already exist or fields are empty")
+            console.log(this.message);
+            this.className='alert alert-danger'
+          }
+          },
+          err => {
+            this.isProcessing=false;
+            this.message="Server Error";
+        //alert("server error")
+            this.className='alert alert-info'
+          }
+        )
+      //}
+  
+    }
+    getclassName(){
+      return this.className;
+    }
 
   }
-  onRegister() {
-    console.log(this.message);
-    this.isProcessing=true;
-    this.submitted = true;
-   
-    let data = this.registerForm.value;
-    //if (this.registerForm.valid) {
-    //alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-    //console.table(this.registerForm.value);
-    this.regservice.registerData(data)
-      .subscribe(
-        res => {
-        if(res.success){
-          this.isProcessing=false;
-          this.message='Account created'
-          //alert("Account created")
-          console.log(this.message)
-          this.className='alert alert-success'
-        }else 
-        {
-          this.isProcessing=false;
-          
-          this.message=res.message;
-         //alert("Email id already exist or fields are empty")
-          console.log(this.message);
-          this.className='alert alert-danger'
-        }
-        },
-        err => {
-          this.isProcessing=false;
-          this.message="Server Error";
-      //alert("server error")
-          this.className='alert alert-info'
-        }
-      )
-    //}
 
-  }
-  getclassName(){
-    return this.className;
-  }
-}

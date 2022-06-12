@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const PaintingData = require('./src/model/Paintingdata');
-const PaintingData = require('./src/model/PaintingData');
 const cors = require('cors');
 const multer  = require('multer');
 const bodyparser = require('body-parser');
