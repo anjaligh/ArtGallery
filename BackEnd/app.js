@@ -1,12 +1,18 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const PaintingData = require('./src/model/Paintingdata');
 const cors = require('cors');
 const bodyparser = require('body-parser');
+const userauth = require('./routes/userauthrouter');
 
 var app = new express;
 
 app.use(cors());
 app.use(bodyparser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/users', userauth);
 
 app.get('/mural', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');

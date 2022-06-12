@@ -26,7 +26,7 @@
             <h5 class="login"><b>Login</b></h5><br>
 
             <p>Don't have an account? <a href="/register">Creat Your Account</a> it takes less than a minute</p>
-            <form  class="form_group field" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <form  class="form_group field" [formGroup]="loginForm" (ngSubmit)="onLogin()">
                 <div class="inputs">
                     <input id="email1" name="email1" formControlName="email1"   type="email"  placeholder="Enter Your Email">
                     <span class="text-danger"
