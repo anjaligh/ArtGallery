@@ -36,7 +36,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'mural/product',component:ProductComponent},
-  {path:'login/seller',component:SellerComponent,children:[
+  {path:'seller',component:SellerComponent,children:[
                     {path:'profile',component:SellerprofileComponent},
                     {path:'wishlist',component:SellerwishlistComponent},
                     {path:'sellerhistory',component:SellerhistoryComponent},
