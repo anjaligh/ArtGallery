@@ -41,7 +41,7 @@ const routes: Routes = [
                     {path:'sellerhistory',component:SellerhistoryComponent},
                     {path:'addwork',component:AddworkformComponent}]},
   {path:'charcoal',component:CharcoalComponent},
-  {path:'product',component:ProductComponent},
+  {path:'product/:id/:name/:price/:dimension/:category/:artist',component:ProductComponent},
   
 
 ];

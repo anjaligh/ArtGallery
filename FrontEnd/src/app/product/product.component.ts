@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -32,8 +33,26 @@ export class ProductComponent implements OnInit {
   beforeChange(e: any) {
     console.log('beforeChange');
   }
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private _Activatedroute:ActivatedRoute) {}
+   id: any;
+   name:any;
+   price:any;
+   artist:any;
+   dimension:any;
+   category:any;
+  
+  ngOnInit(): void {
+    this._Activatedroute.paramMap.subscribe(params => { 
+      this.id = params.get('id'); 
+      this.name = params.get('name'); 
+      this.price = params.get('price');
+      this.artist = params.get('artist');  
+      this.dimension = params.get('dimension'); 
+      this.category=params.get('category');
+      console.log(this.id)
+  });
+  }
+  
 }
 
   
