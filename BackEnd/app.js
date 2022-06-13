@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const PaintingData = require('./src/model/Paintingdata');
 const cors = require('cors');
-// const multer  = require('multer');
+const multer  = require('multer');
 const bodyparser = require('body-parser');
 const userauth = require('./routes/userauthrouter');
 
@@ -17,10 +17,11 @@ app.use('/users', userauth);
 
 // const storage=multer.diskStorage({
 //     destination:(req,files,cb)=>{
-//         cb(null,'public/images')
+//         cb(null,path.join(_dirname,'../','FrontEnd/src/assets/images'));
 //     },
 //     filename:(req,file,cb)=>{
 // console.log(file);
+
 
 // const image=file.originalname;
 // console.log(image);
