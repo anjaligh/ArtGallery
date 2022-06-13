@@ -42,11 +42,11 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('token',res.token)
             if(res.userrole=="Seller")
             {
-            this.router.navigate(['/seller']);
+            this.router.navigate(['/seller/profile']);
             alert(res.message);
             }
             else{
-              this.router.navigate(['/seller'])
+              this.router.navigate(['/seller/profile'])
               alert(res.message);
             }
           }

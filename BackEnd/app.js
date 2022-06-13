@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const PaintingData = require('./src/model/Paintingdata');
 const cors = require('cors');
-const multer  = require('multer');
+// const multer  = require('multer');
 const bodyparser = require('body-parser');
 const userauth = require('./routes/userauthrouter');
 
@@ -15,22 +15,22 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/users', userauth);
 
-const storage=multer.diskStorage({
-    destination:(req,files,cb)=>{
-        cb(null,'public/images')
-    },
-    filename:(req,file,cb)=>{
-console.log(file);
+// const storage=multer.diskStorage({
+//     destination:(req,files,cb)=>{
+//         cb(null,'public/images')
+//     },
+//     filename:(req,file,cb)=>{
+// console.log(file);
 
-const image=file.originalname;
-console.log(image);
+// const image=file.originalname;
+// console.log(image);
 
-//cb(null,Date.now()+path.extname(file.originalname));
-cb(null,image);
+// //cb(null,Date.now()+path.extname(file.originalname));
+// cb(null,image);
 
-    }
-})
-const upload=multer({storage:storage});
+//     }
+// })
+// const upload=multer({storage:storage});
 
 app.get('/mural', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
