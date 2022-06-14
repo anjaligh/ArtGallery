@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-sellercart',
@@ -7,9 +12,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellercartComponent implements OnInit {
 
-  constructor() { }
-
+<<<<<<< Updated upstream
+  constructor(private _Activatedroute:ActivatedRoute) {}
+   id: any;
+   name:any;
+   price:any;
+   artist:any;
+   dimension:any;
+   category:any;
+   image:any;
+  
+=======
+  constructor(private _Activatedroute:ActivatedRoute) { }
+  id: any;
+  name:any;
+  price:any;
+  artist:any;
+  dimension:any;
+  category:any;
+  image:any;
+>>>>>>> Stashed changes
   ngOnInit(): void {
+    this._Activatedroute.paramMap.subscribe(params => { 
+      this.id = params.get('id'); 
+      this.name = params.get('name'); 
+      this.price = params.get('price');
+      this.artist = params.get('artist');  
+      this.dimension = params.get('dimension'); 
+      this.category=params.get('category');
+      this.image=params.get('image');
+      console.log(this.id)
+  });
   }
 
 }

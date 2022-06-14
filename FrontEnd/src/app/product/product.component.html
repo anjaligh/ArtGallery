@@ -15,12 +15,16 @@
             <label for="rupees" style="color: teal;font-size:50px;">&#8377;{{price}}</label>
             <br><br>
             <div>
-              <button type="button" class="btn btn-primary btn-block" style="width:80%;text-align: center;">ADD TO
+<<<<<<< Updated upstream
+              <button type="button" [routerLink]="['/seller/cart']"  class="btn btn-primary btn-block" style="width:80%;text-align: center;">ADD TO
+=======
+              <button type="button" [routerLink]="['/seller/cart',id,name,price,dimension,category,artist,image]" class="btn btn-primary btn-block" style="width:80%;text-align: center;">ADD TO
+>>>>>>> Stashed changes
                 CART</button>
               <br><br>
   
-              <button type="button" class="btn btn-secondary" style="width:80%;text-align: center;">Add to
-                Favorites</button>
+              <!-- <button type="button" class="btn btn-secondary" style="width:80%;text-align: center;">Add to
+                Favorites</button> -->
   
             </div>
           </div>
