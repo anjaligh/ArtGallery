@@ -17,12 +17,11 @@ export class RegisterComponent implements OnInit {
 className=""
 
 
-  constructor(private fb: FormBuilder, private customValidator: CustomvalidatorsService, private regservice: AuthservicesService) { }
+  constructor(private fb: FormBuilder, private customValidator: CustomvalidatorsService, private regservice: AuthservicesService,private _router:Router) { }
   registerForm = new FormGroup({
 
  
-  constructor(private fb:FormBuilder,private customValidator: CustomvalidatorsService, private _router:Router){}
-  registerForm=new FormGroup({
+ 
   
 
     //password:new FormControl('',Validators.compose([Validators.required, this.customValidator.patternValidator()])),
@@ -37,18 +36,18 @@ className=""
 
     
     }
-    onSubmit() {
-      this.submitted = true;
-      if (this.registerForm.valid) {
-        alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-        console.table(this.registerForm.value);
-        this._router.navigate(['login'])
-      }
+    // onSubmit() {
+    //   this.submitted = true;
+    //   if (this.registerForm.valid) {
+    //     alert('Form Submitted succesfully!!!\n Check the values in browser console.');
+    //     console.table(this.registerForm.value);
+    //     this._router.navigate(['login'])
+    //   }
   
-    }}
+    // }}
 
 
-  }
+  
   onRegister() {
     console.log(this.message);
     this.isProcessing=true;

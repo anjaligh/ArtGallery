@@ -60,13 +60,13 @@ else{
         //console.log(data, "from backend")
       )
     
-    if (this.loginForm.valid) {
-      alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-      console.table(this.loginForm.value);
-      this._router.navigate(['login/seller/profile'])
+    // if (this.loginForm.valid) {
+    //   alert('Form Submitted succesfully!!!\n Check the values in browser console.');
+    //   console.table(this.loginForm.value);
+    //   this.router.navigate(['login/seller/profile'])
 
       
-    }
+    // }
   }
   
 
