@@ -1,5 +1,5 @@
 <div>
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgba(0, 0, 0, 0.829); width: 100%;" >
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgba(0, 0, 0); width: 100%;" >
       <div class="container-fluid">
        
         <a class="navbar-brand" href="#"> <img src="assets/logo.png" alt="" style="width: 100px;height: 60px;"> </a>
@@ -9,42 +9,42 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" routerLink="" style="color: white;">Home</a>
+              <a class="nav-link" aria-current="page" routerLink="" style="color: white;padding-right: 4vw;">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#page1" style="color: white;">Explore</a>
+              <a class="nav-link" href="#page1" style="color: white;padding-right: 4vw;">Explore</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="seller" *ngIf="auth.loggedIn()" style="color: white;">MyProfile</a>
+              <a class="nav-link" routerLink="aboutus" *ngIf="!auth.loggedIn()"  style="color: white;padding-right: 4vw;">AboutUs</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" routerLink="contactus" *ngIf="!auth.loggedIn()"  style="color: white;padding-right: 4vw;">ContactUs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="seller" *ngIf="auth.loggedIn()" style="color: white;padding-right: 4vw;">MyProfile</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" routerLink="/seller/addwork" *ngIf="auth.loggedIn()" style="color: white;">Add Work</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" routerLink="/seller/cart" *ngIf="auth.loggedIn()" style="color: white;">Cart</a>
+              <a class="nav-link" routerLink="/seller/cart" *ngIf="auth.loggedIn()" style="color: white;padding-right: 4vw;">Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/" *ngIf="auth.loggedIn()" (click)="logOut()" style="color: white;">Logout</a>
+              <a class="nav-link" routerLink="/" *ngIf="auth.loggedIn()" (click)="logOut()" style="color: white;padding-right: 4vw;">Logout</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="aboutus" *ngIf="!auth.loggedIn()"  style="color: white;">AboutUs</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link" routerLink="contactus" *ngIf="!auth.loggedIn()"  style="color: white;">ContactUs</a>
-            </li>
+            
            
             <li class="nav-item">
-              <a class="nav-link" *ngIf="!auth.loggedIn()" routerLink="login" style="color: white;">Login</a>
+              <a class="nav-link" *ngIf="!auth.loggedIn()" routerLink="login" style="color: white;padding-right: 4vw;">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="register" *ngIf="!auth.loggedIn()" style="color: white;">Register</a>
+              <a class="nav-link" routerLink="register" *ngIf="!auth.loggedIn()" style="color: white;padding-right: 4vw;">Register</a>
             </li>
            
           </ul>
 
           </div>
         </div>
-      </div>
     </nav>
 </div>
 

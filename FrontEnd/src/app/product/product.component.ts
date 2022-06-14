@@ -40,6 +40,7 @@ export class ProductComponent implements OnInit {
    artist:any;
    dimension:any;
    category:any;
+   image:any;
   
   ngOnInit(): void {
     this._Activatedroute.paramMap.subscribe(params => { 
@@ -49,6 +50,7 @@ export class ProductComponent implements OnInit {
       this.artist = params.get('artist');  
       this.dimension = params.get('dimension'); 
       this.category=params.get('category');
+      this.image=params.get('image');
       console.log(this.id)
   });
   }
