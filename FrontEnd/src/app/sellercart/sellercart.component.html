@@ -1,10 +1,10 @@
 <div class="container1">
+    <h2 class="text-center">My Cart</h2> 
+    <!-- <h6 *ngIf="!purchased" class="emptyNote">Your cart is Empty!!</h6> -->
     <div class="row">
-<<<<<<< Updated upstream
-        <div class="col-md-4">
-=======
+
         <div class="col-md-4" >
->>>>>>> Stashed changes
+
             <figure class="card card-product-grid">
                 <div class="img-wrap">
                     <!-- <span class="badge badge-danger"> NEW </span> -->
@@ -18,19 +18,10 @@
                             <del class="price-old">Rs 1980</del>
                         </div> <!-- price-wrap.// -->
                     </div>
-<<<<<<< Updated upstream
-                    <!-- <a [routerLink]="['/product', i._id,i.name,i.price,i.dimension,i.category,i.artist,i.image]" class="btn btn-block btn-primary">View Details</a> -->
-                </figcaption>
-            </figure>
-        </div> <!-- col.// -->
-    </div> 
-</div>
-
-=======
-                    <!-- <a [routerLink]="['/product', i._id,i.name,i.price,i.dimension,i.category,i.artist]" class="btn btn-block btn-primary">View Details</a> -->
+                    <a type="button"class="btn btn-block btn-primary" style="background-color:#24a0ed;border: 1px solid #24a0ed;" (click)="purchaseAlert()"><h5 style="color:white">Buy</h5></a>
                 </figcaption>
             </figure>
         </div> <!-- col.// -->
     </div>
 </div>
->>>>>>> Stashed changes
+
