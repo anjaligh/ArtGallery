@@ -42,11 +42,11 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('token',res.token)
             if(res.userrole=="Seller")
             {
-            this.router.navigate(['/seller']);
+            this.router.navigate(['/seller/profile']);
             alert(res.message);
             }
             else{
-              this.router.navigate(['/pastel'])
+              this.router.navigate(['/seller/profile'])
               alert(res.message);
             }
           }
@@ -64,6 +64,7 @@ else{
     //   alert('Form Submitted succesfully!!!\n Check the values in browser console.');
     //   console.table(this.loginForm.value);
     //   this.router.navigate(['login/seller/profile'])
+
 
       
     // }

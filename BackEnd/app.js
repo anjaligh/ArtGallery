@@ -16,22 +16,23 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/users', userauth);
 
-const storage=multer.diskStorage({
-    destination:(req,files,cb)=>{
-        cb(null,'public/images')
-    },
-    filename:(req,file,cb)=>{
-console.log(file);
+// const storage=multer.diskStorage({
+//     destination:(req,files,cb)=>{
+//         cb(null,path.join(_dirname,'../','FrontEnd/src/assets/images'));
+//     },
+//     filename:(req,file,cb)=>{
+// console.log(file);
 
-const image=file.originalname;
-console.log(image);
 
-//cb(null,Date.now()+path.extname(file.originalname));
-cb(null,image);
+// const image=file.originalname;
+// console.log(image);
 
-    }
-})
-const upload=multer({storage:storage});
+// //cb(null,Date.now()+path.extname(file.originalname));
+// cb(null,image);
+
+//     }
+// })
+// const upload=multer({storage:storage});
 
 app.get('/mural', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
