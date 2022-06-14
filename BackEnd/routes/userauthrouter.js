@@ -4,6 +4,26 @@ const registerData = require('../model/registermodel')
 const bcrypt = require('bcrypt');
 const jwt=require('jsonwebtoken');
 const checkAuth=require('../middleware/check-auth')
+function verifyToken(req,res,next){
+
+  if(!req.headers.authorization)
+  {
+
+  return res.status(401).send('Unauthorized user');
+}
+let token= req.headers.authorization.split(' ')[1];
+if(token==null){
+  return res.status(401).send('Unauthorized user');
+}
+let payload=jwt.verify(token, 'ICTAcademy');
+console.log(payload)
+if(!payload){
+  return res.status(401).send('Unauthorized user');
+}
+req.userId=payload.subject
+next()
+  }
+
 router.post('/register', (req, res) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
     if (err) {
@@ -48,11 +68,12 @@ router.post('/login', (req, res) => {
       bcrypt.compare(req.body.password,user.password,(err, ret) => {
         if (ret) {
           let userrole=user.userrole;
+          let username=user.name;
           const payload={
             userid:user._id
           }
           const token=jwt.sign(payload,'ICTAcademy');
-          return res.json({ success: true, message: "Login successful",userrole:userrole,token:token})
+          return res.json({ success: true, message: "Login successful",userrole:userrole,token:token,username:username})
           
         }
         else {
@@ -64,7 +85,7 @@ router.post('/login', (req, res) => {
     });
 })
 
-router.get('/seller', checkAuth, (req, res) => {
+router.get('/seller', verifyToken, (req, res) => {
   const userId = req.userData.userId
   
 
@@ -90,4 +111,7 @@ router.get('/buyer', checkAuth, (req, res) => {
       })
     
 })
+
+
+
 module.exports = router;

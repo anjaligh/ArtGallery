@@ -63,7 +63,8 @@ else{
     // if (this.loginForm.valid) {
     //   alert('Form Submitted succesfully!!!\n Check the values in browser console.');
     //   console.table(this.loginForm.value);
-    //   this._router.navigate(['login/seller/profile'])
+    //   this.router.navigate(['login/seller/profile'])
+
 
       
     // }

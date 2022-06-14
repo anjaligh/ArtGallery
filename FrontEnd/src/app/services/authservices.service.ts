@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,11 +21,20 @@ export class AuthservicesService {
 
     return this.http.post<any>("http://localhost:3000/users/login",data)
   }
-  getAcrylic():Observable<any>{
+  getSeller():Observable<any>{
     let headers={
       'Authorization':"CheckUsers"+localStorage.getItem('token')
     }
     return this.http.get("http://localhost:3000/users/seller",{headers:headers})
 
   }
+  loggedIn()
+  {
+    return !!localStorage.getItem('token')
+  
+  }
+  getToken(){
+    return localStorage.getItem('token')
+  }
+ 
 }

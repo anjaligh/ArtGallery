@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-
+import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -41,8 +41,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AddworkComponent } from './addwork/addwork.component';
 import { AddworkformComponent } from './addworkform/addworkform.component';
 import { SellercartComponent } from './sellercart/sellercart.component';
-
-
+import { CustomvalidatorsService } from './services/customvalidators.service';
+import { AuthservicesService } from './services/authservices.service';
 
 @NgModule({
   declarations: [
@@ -86,7 +86,11 @@ import { SellercartComponent } from './sellercart/sellercart.component';
     SlickCarouselModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [CustomvalidatorsService,AuthservicesService,{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
