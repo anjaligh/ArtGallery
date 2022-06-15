@@ -18,143 +18,112 @@
   <!-- ========================= SECTION CONTENT ========================= -->
   <section class="section-content padding-y">
     <div class="container">
-      <div class="row">
-        <aside class="col-md-3">
-          <div class="card">
-            <article class="filter-group">
-              <header class="card-header">
-                <h6 class="title" style="color: #e91e63">Categories</h6>
-              </header>
-              <div class="filter-content collapse show" id="collapse_1">
-                <div class="card-body">
-                  <form class="pb-3">
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Search"
-                      />
-                      <div class="input-group-append">
-                        <button class="btn btn-light" type="button">
-                          <i class="fa fa-search"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
 
-                  <ul class="list-menu">
-                    <li><a routerLink="abstract">Abstract</a></li>
-                    <li><a routerLink="acrylic">Arcylic</a></li>
-                    <li><a routerLink="charcoal">Charcoal</a></li>
-                    <li><a routerLink="mural">Mural</a></li>
-                    <li><a routerLink="pastel">Pastel</a></li>
-                    <li><a routerLink="watercolor">Watercolor</a></li>
-                  </ul>
-                </div>
-                <!-- card-body.// -->
-              </div>
-            </article>
-            <!-- filter-group  .// -->
-
-            <article class="filter-group">
-              <header class="card-header">
-                <h6 class="title" style="color: #e91e63">Price range</h6>
-              </header>
-              <div class="filter-content collapse show" id="collapse_3">
-                <div class="card-body">
-                  <input
-                    type="range"
-                    class="custom-range"
-                    min="0"
-                    max="100"
-                    name=""
-                  />
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label>Min</label>
-                      <input
-                        class="form-control"
-                        placeholder="Rs 0"
-                        type="number"
-                      />
-                    </div>
-                    <div class="form-group text-right col-md-6">
-                      <label>Max</label>
-                      <input
-                        class="form-control"
-                        placeholder="Rs 1,0000"
-                        type="number"
-                      />
-                    </div>
-                  </div>
-                  <!-- form-row.// -->
-                  <button class="btn btn-block btn-primary">Apply</button>
-                </div>
-        </header><!-- sect-heading -->
-        
         <div class="row">
-            <div class="col-md-4" *ngFor="let i of pastel">
-                <figure class="card card-product-grid">
-                    <div class="img-wrap">
+            <aside class="col-md-3">
+
+                <div class="card">
+                    <article class="filter-group">
+                        <header class="card-header">
+                            <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true"
+                                class="">
+                                <i class="icon-control fa fa-chevron-down"></i>
+                                <h6 class="title">Categories</h6>
+                            </a>
+                        </header>
+                        <div class="filter-content collapse show" id="collapse_1">
+                            <div class="card-body">
+                                <form class="pb-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-light" type="button"><i
+                                                    class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <ul class="list-menu">
+                                    <li><a href="#">Mural</a></li>
+                                    <li><a href="#">Arcylic</a></li>
+                                    <li><a href="#">Abstract</a></li>
+                                    <li><a href="#">Watercolor</a></li>
+                                    <li><a href="#">Pastel</a></li>
+                                </ul>
+
+                            </div> <!-- card-body.// -->
+                        </div>
+                    </article> <!-- filter-group  .// -->
+
+                    <article class="filter-group">
+                        <header class="card-header">
+                            <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true"
+                                class="">
+                                <i class="icon-control fa fa-chevron-down"></i>
+                                <h6 class="title">Price range</h6>
+                            </a>
+                        </header>
+                        <div class="filter-content collapse show" id="collapse_3">
+                            <div class="card-body">
+                                <input type="range" class="custom-range" min="0" max="100" name="">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Min</label>
+                                        <input class="form-control" placeholder="Rs 0" type="number">
+                                    </div>
+                                    <div class="form-group text-right col-md-6">
+                                        <label>Max</label>
+                                        <input class="form-control" placeholder="Rs 1,0000" type="number">
+                                    </div>
+                                </div> <!-- form-row.// -->
+                                <button class="btn btn-block btn-primary">Apply</button>
+                            </div><!-- card-body.// -->
+                        </div>
+                    </article> 
+                    <!-- filter-group .// -->
+
+                </div> <!-- card.// -->
+
+            </aside> <!-- col.// -->
+            <main class="col-md-9">
+
+                <header class="border-bottom mb-4 pb-3">
+                    <div class="form-inline">
+                        <!-- <span class="mr-md-auto">32 Items found </span> -->
+                    </div>
+                </header><!-- sect-heading -->
+
+                <div class="row">
+                  <div class="col-md-4" *ngFor="let i of pastel">
+                    <figure class="card card-product-grid">
+                      <div class="img-wrap">
                         <span class="badge badge-danger"> NEW </span>
                         <img [src]=i.image>
-                    </div> <!-- img-wrap.// -->
-                    <figcaption class="info-wrap"> 
+                      </div> 
+                      <figcaption class="info-wrap">
                         <div class="fix-height">
-                            <a routerLink="#" class="title">{{i.name}}</a>
-                            <div class="price-wrap mt-2">
-                                <span class="price">Rs {{i.price}}</span>
-                                <del class="price-old">Rs 1980</del>
-                            </div> <!-- price-wrap.// -->
+                          <a routerLink="#" class="title">{{i.name}}</a>
+                          <div class="price-wrap mt-2">
+                            <span class="price">Rs {{i.price}}</span>
+                            <del class="price-old">Rs 1980</del>
+                          </div> 
                         </div>
-                        <a [routerLink]="['/product', i._id,i.name,i.price,i.dimension,i.category,i.artist,i.image]" class="btn btn-block btn-primary">View Details</a>
-                    </figcaption>
-                </figure>
-            </div> <!-- col.// -->
-        </div> <!-- row end.// -->
+                        <a [routerLink]="['/product', i._id,i.name,i.price,i.dimension,i.category,i.artist,i.image]"
+                          class="btn btn-block btn-primary">View Details</a>
+                      </figcaption>
+                    </figure>
+                  </div> 
+                </div> <!-- row end.// -->
 
-          <div class="row">
-            <div class="col-md-4" *ngFor="let i of pastel">
-              <figure class="card card-product-grid">
-                <div class="img-wrap">
-                  <img [src]="i.image" />
-                </div>
-                <!-- img-wrap.// -->
-                <figcaption class="info-wrap">
-                  <div class="fix-height">
-                    <a routerLink="#" class="title">{{ i.name }}</a>
-                    <div class="price-wrap mt-2">
-                      <span class="price">Rs {{ i.price }}</span>
-                    </div>
-                    <!-- price-wrap.// -->
-                  </div>
-                  <a
-                    [routerLink]="[
-                      '/product',
-                      i._id,
-                      i.name,
-                      i.price,
-                      i.dimension,
-                      i.category,
-                      i.artist
-                    ]"
-                    class="btn btn-block btn-primary"
-                    >View Details</a
-                  >
-                </figcaption>
-              </figure>
-            </div>
-            <!-- col.// -->
-          </div>
-          <!-- row end.// -->
-        </main>
+            </main> <!-- col.// -->
+
+        </div>
         <!-- col.// -->
-      </div>
+      <!-- row end.// -->
     </div>
-    <!-- container .//  -->
-  </section>
-  <!-- ========================= SECTION CONTENT END// ========================= -->
-
-  <!-- ========================= FOOTER ========================= -->
-  <!-- ========================= FOOTER END // ========================= -->
+   <!-- container .//  -->
+</section>
+  <!-- container .//  -->
 </div>
+
+
