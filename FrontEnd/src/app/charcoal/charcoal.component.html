@@ -104,46 +104,45 @@
 
           <div class="row">
             <div class="col-md-4" *ngFor="let i of charcoal">
-              <figure class="card card-product-grid">
-                <div class="img-wrap">
-                  <img [src]="i.image" />
-                </div>
-                <!-- img-wrap.// -->
-                <figcaption class="info-wrap">
-                  <div class="fix-height">
-                    <a routerLink="#" class="title">{{ i.name }}</a>
-                    <div class="price-wrap mt-2">
-                      <span class="price">Rs {{ i.price }}</span>
-                    </div>
-                    <!-- price-wrap.// -->
-                  </div>
-                  <a
-                    [routerLink]="[
-                      '/product',
-                      i._id,
-                      i.name,
-                      i.price,
-                      i.dimension,
-                      i.category,
-                      i.artist
-                    ]"
-                    class="btn btn-block btn-primary"
-                    >View Details</a
-                  >
-                </figcaption>
-              </figure>
-            </div>
-            <!-- col.// -->
-          </div>
-          <!-- row end.// -->
-        </main>
-        <!-- col.// -->
-      </div>
-    </div>
-    <!-- container .//  -->
-  </section>
-  <!-- ========================= SECTION CONTENT END// ========================= -->
-
-  <!-- ========================= FOOTER ========================= -->
-  <!-- ========================= FOOTER END // ========================= -->
+                <figure class="card card-product-grid">
+                    <div class="img-wrap">
+                        <span class="badge badge-danger"> NEW </span>
+                        <img [src]=i.image>
+                    </div> <!-- img-wrap.// -->
+                    <figcaption class="info-wrap">
+                        <div class="fix-height">
+                            <a routerLink="#" class="title">{{i.name}}</a>
+                            <div class="price-wrap mt-2">
+                                <span class="price">Rs {{i.price}}</span>
+                                <del class="price-old">Rs 1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div>
+                        <a [routerLink]="['/product', i._id,i.name,i.price,i.dimension,i.category,i.artist,i.image]" class="btn btn-block btn-primary">View Details</a>
+                    </figcaption>
+                </figure>
+            </div> <!-- col.// -->
+        </div> <!-- row end.// -->
+        
+        
+        <nav aria-label="Page navigation sample">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+        
+            </main> <!-- col.// -->
+        
+        </div>
+        
+        </div> <!-- container .//  -->
+        </section>
+        <!-- ========================= SECTION CONTENT END// ========================= -->
+        
+        <!-- ========================= FOOTER ========================= -->
+        <!-- ========================= FOOTER END // ========================= -->
 </div>
+

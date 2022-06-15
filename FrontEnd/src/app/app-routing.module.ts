@@ -39,15 +39,15 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'mural/product',component:ProductComponent},
   {path:'seller',
-  canActivate:[AuthguardGuard],
+  //canActivate:[AuthguardGuard],
   component:SellerComponent,children:[
                     {path:'profile',component:SellerprofileComponent},
                     {path:'wishlist',component:SellerwishlistComponent},
                     {path:'sellerhistory',component:SellerhistoryComponent},
                     {path:'addwork',component:AddworkformComponent},
-                    {path:'cart',component:SellercartComponent}]},
+                    {path:'cart/:id/:name/:price/:dimension/:category/:artist/:image',component:SellercartComponent}]},
   {path:'charcoal',component:CharcoalComponent},
-  {path:'product/:id/:name/:price/:dimension/:category/:artist/:image',component:ProductComponent},
+  {path:'product/:id/:name/:price/:dimension/:category/:artist/:image',component:ProductComponent}
   
 
 ];

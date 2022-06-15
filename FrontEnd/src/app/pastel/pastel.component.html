@@ -90,17 +90,28 @@
                   <!-- form-row.// -->
                   <button class="btn btn-block btn-primary">Apply</button>
                 </div>
-                <!-- card-body.// -->
-              </div>
-            </article>
-            <!-- filter-group .// -->
-          </div>
-          <!-- card.// -->
-        </aside>
-        <!-- col.// -->
-        <main class="col-md-9">
-          <header class="border-bottom mb-4 pb-3"></header>
-          <!-- sect-heading -->
+        </header><!-- sect-heading -->
+        
+        <div class="row">
+            <div class="col-md-4" *ngFor="let i of pastel">
+                <figure class="card card-product-grid">
+                    <div class="img-wrap">
+                        <span class="badge badge-danger"> NEW </span>
+                        <img [src]=i.image>
+                    </div> <!-- img-wrap.// -->
+                    <figcaption class="info-wrap"> 
+                        <div class="fix-height">
+                            <a routerLink="#" class="title">{{i.name}}</a>
+                            <div class="price-wrap mt-2">
+                                <span class="price">Rs {{i.price}}</span>
+                                <del class="price-old">Rs 1980</del>
+                            </div> <!-- price-wrap.// -->
+                        </div>
+                        <a [routerLink]="['/product', i._id,i.name,i.price,i.dimension,i.category,i.artist,i.image]" class="btn btn-block btn-primary">View Details</a>
+                    </figcaption>
+                </figure>
+            </div> <!-- col.// -->
+        </div> <!-- row end.// -->
 
           <div class="row">
             <div class="col-md-4" *ngFor="let i of pastel">
