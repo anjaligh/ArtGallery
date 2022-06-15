@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
             alert(res.message);
             }
             else{
-              this.router.navigate(['/seller/profile'])
+              this.router.navigate(['/buyer'])
               alert(res.message);
             }
           }

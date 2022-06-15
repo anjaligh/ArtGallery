@@ -22,6 +22,8 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
 import { SellercartComponent } from './sellercart/sellercart.component';
 
 import { AuthguardGuard } from './guard/authguard.guard';
+import { BuyerComponent } from './buyer/buyer.component';
+import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component';
 
 
 
@@ -38,6 +40,9 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'mural/product',component:ProductComponent},
+  {path:'buyer',component:BuyerComponent,children:[
+                              {path:'wishlist',component:BuyerwishlistComponent}
+  ]},
   {path:'seller',
   //canActivate:[AuthguardGuard],
   component:SellerComponent,children:[
