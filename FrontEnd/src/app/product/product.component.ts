@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthservicesService } from '../services/authservices.service';
 
 @Component({
   selector: 'app-product',
@@ -33,7 +35,7 @@ export class ProductComponent implements OnInit {
   beforeChange(e: any) {
     console.log('beforeChange');
   }
-  constructor(private _Activatedroute:ActivatedRoute) {}
+  constructor(private _Activatedroute:ActivatedRoute, private router:Router,public auth:AuthservicesService) {}
    id: any;
    name:any;
    price:any;
@@ -54,7 +56,20 @@ export class ProductComponent implements OnInit {
       console.log(this.id)
   });
   }
-  
+  toCart(){
+    var user=localStorage.getItem('userrole')
+    console.log("userroleee:"+user);
+    if(user=="Buyer"){
+      this.router.navigate(['/buyer/bcart',this.id,this.name,this.price,this.dimension,this.category,this.artist,this.image]);
+    }
+    else if(user=="Seller"){
+      this.router.navigate(['/seller/cart',this.id,this.name,this.price,this.dimension,this.category,this.artist,this.image]);
+    }
+    else if(user=="Admin"){
+      this.router.navigate(['/admin/acart',this.id,this.name,this.price,this.dimension,this.category,this.artist,this.image]);
+    }
+    
+  }
 }
 
   

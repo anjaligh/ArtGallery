@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-sellercart',
-  templateUrl: './sellercart.component.html',
-  styleUrls: ['./sellercart.component.css']
+  selector: 'app-admin-cart',
+  templateUrl: './admin-cart.component.html',
+  styleUrls: ['./admin-cart.component.css']
 })
-export class SellercartComponent implements OnInit {
+export class AdminCartComponent implements OnInit {
 
   constructor(private _Activatedroute:ActivatedRoute) { }
   purchased:any=false;
@@ -35,4 +35,5 @@ purchaseAlert(){
   alert(`Item Purchased!! Check "My Orders" `);
   this.purchased=true;
 }
+
 }
