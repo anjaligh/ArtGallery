@@ -69,11 +69,12 @@ router.post('/login', (req, res) => {
         if (ret) {
           let userrole=user.userrole;
           let username=user.name;
+          let useremail=user.email
           const payload={
             userid:user._id
           }
           const token=jwt.sign(payload,'ICTAcademy');
-          return res.json({ success: true, message: "Login successful",userrole:userrole,token:token,username:username})
+          return res.json({ success: true, message: "Login successful",userrole:userrole,token:token,username:username,useremail:useremail})
           
         }
         else {

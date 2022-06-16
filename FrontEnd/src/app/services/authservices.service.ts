@@ -36,5 +36,32 @@ export class AuthservicesService {
   getToken(){
     return localStorage.getItem('token')
   }
+  adminCheck(){
+    var user=localStorage.getItem('userrole')
+    if(user=="Admin"){
+      return true;
+    }
+    else {
+      return false
+    }
+  }
+  buyerCheck(){
+    var user=localStorage.getItem('userrole')
+    if(user=="Buyer"){
+      return true;
+    }
+    else {
+      return false
+    }
+  }
+  sellerCheck(){
+    var user=localStorage.getItem('userrole')
+    if(user=="Seller"){
+      return true;
+    }
+    else {
+      return false
+    }
+  }
  
 }

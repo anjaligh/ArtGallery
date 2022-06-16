@@ -94,6 +94,16 @@ app.get('/charcoal', (req, res) => {
             res.send(paintings)
         });
 });
+app.get('/getMyPaintings/:usermail',(req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    const mail=req.params.usermail
+    PaintingData.find({ "email": mail })
+        .then((paintings) => {
+            console.log(paintings)
+            res.send(paintings)
+        });
+});
 
 app.post('/addwork',function(req,res){
     res.header('Access-Control-Allow-Origin','*');

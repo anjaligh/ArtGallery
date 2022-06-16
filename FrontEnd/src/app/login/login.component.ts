@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
           if(res.success){
             localStorage.setItem('token',res.token)
             localStorage.setItem('userrole',res.userrole)
+            localStorage.setItem('usermail',res.useremail)
             if(res.userrole=="Admin")
             {
             this.router.navigate(['admin']);

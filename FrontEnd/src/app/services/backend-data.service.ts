@@ -29,4 +29,7 @@ export class BackendDataService {
     console.log(data);
     return this.http.post<any>('http://localhost:3000/addwork',data)
   }
+  getMypaintings(usermail:any){
+    return this.http.get('http://localhost:3000/getMyPaintings/'+usermail)
+  }
 }
