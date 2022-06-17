@@ -32,4 +32,7 @@ export class BackendDataService {
   getMypaintings(usermail:any){
     return this.http.get('http://localhost:3000/getMyPaintings/'+usermail)
   }
+  getMyCart(idValue: string){
+    return this.http.get('http://localhost:3000/mycart/'+idValue)
+  }
 }

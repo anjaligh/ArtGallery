@@ -104,6 +104,16 @@ app.get('/getMyPaintings/:usermail',(req, res) => {
             res.send(paintings)
         });
 });
+app.get('/mycart/:idValue',(req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    const idValue=req.params.idValue
+    PaintingData.find({ "_id": idValue })
+        .then((paintings) => {
+            console.log(paintings)
+            res.send(paintings)
+        });
+});
 
 app.post('/addwork',function(req,res){
     res.header('Access-Control-Allow-Origin','*');
