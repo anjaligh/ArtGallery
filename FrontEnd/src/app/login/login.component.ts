@@ -40,13 +40,24 @@ export class LoginComponent implements OnInit {
         res=>{
           if(res.success){
             localStorage.setItem('token',res.token)
-            if(res.userrole=="Seller")
+            localStorage.setItem('userrole',res.userrole)
+            localStorage.setItem('usermail',res.useremail)
+            localStorage.setItem('username',res.username)
+            if(res.userrole=="Admin")
             {
-            this.router.navigate(['/seller']);
+            this.router.navigate(['admin']);
+            alert(res.message);
+            
+            localStorage.setItem('username',res.username)
+            }
+            else if(res.userrole=="Seller")
+            {
+            this.router.navigate(['/seller/profile']);
             alert(res.message);
             }
-            else{
-              this.router.navigate(['/pastel'])
+            else if(res.userrole=="Buyer")
+            {
+              this.router.navigate(['/buyer/bprofile'])
               alert(res.message);
             }
           }
@@ -64,6 +75,7 @@ else{
     //   alert('Form Submitted succesfully!!!\n Check the values in browser console.');
     //   console.table(this.loginForm.value);
     //   this.router.navigate(['login/seller/profile'])
+
 
       
     // }

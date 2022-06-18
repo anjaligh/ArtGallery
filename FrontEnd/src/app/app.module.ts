@@ -43,6 +43,8 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
 import { SellercartComponent } from './sellercart/sellercart.component';
 import { CustomvalidatorsService } from './services/customvalidators.service';
 import { AuthservicesService } from './services/authservices.service';
+import { AdminprofileComponent } from './adminprofile/adminprofile.component';
+import { AdminprofileupdateComponent } from './adminprofileupdate/adminprofileupdate.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { AuthservicesService } from './services/authservices.service';
     HeaderComponent,
     AddworkComponent,
     AddworkformComponent,
-    SellercartComponent
+    SellercartComponent,
+    AdminprofileComponent,
+    AdminprofileupdateComponent
   ],
   imports: [
     BrowserModule,

@@ -38,6 +38,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'mural/product',component:ProductComponent},
+    
   {path:'seller',
   canActivate:[AuthguardGuard],
   component:SellerComponent,children:[

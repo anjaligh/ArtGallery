@@ -5,10 +5,14 @@ const Schema = mongoose.Schema;
 
 
 var RegisterSchema = new Schema({
+   // _id:{type:String,required:true},
+   profileId : {type:String,required:true},
     name : {type:String,required:true},
     email:{type:String,unique:true},
     userrole:{type:String,required:true},
-    password:{type:String,required:true}
+    password:{type:String,required:true},
+    contactno:{type:String,required:true},
+    address:{type:String,required:true}
 
  
   
