@@ -40,6 +40,10 @@ export class BackendDataService {
   getMypaintings(usermail:any){
     return this.http.get('http://localhost:3000/getMyPaintings/'+usermail)
   }
+// <<<<<<< adminCheck-branch
+//   getMyCart(idValue: string){
+//     return this.http.get('http://localhost:3000/mycart/'+idValue)
+// =======
   getMyCart(usermail:any){
     return this.http.get('http://localhost:3000/getMyCart/'+usermail)
   }
@@ -48,5 +52,6 @@ export class BackendDataService {
   }
   deleteCart(usermail:any,paintingname1:any){
     return this.http.get('http://localhost:3000/deletemycart/'+usermail+paintingname1)
+
   }
 }

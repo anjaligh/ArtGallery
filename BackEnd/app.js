@@ -106,16 +106,25 @@ app.get('/getMyPaintings/:usermail',(req, res) => {
             res.send(paintings)
         });
 });
+// <<<<<< //adminCheck-branch
+// app.get('/mycart/:idValue',(req, res) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+//     const idValue=req.params.idValue
+//     PaintingData.find({ "_id": idValue })
+// =======
 app.get('/getMyCart/:usermail',(req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
     const mail=req.params.usermail
     cartData.find({ "buyeremail": mail })
+// >>>>>>> master
         .then((paintings) => {
             console.log(paintings)
             res.send(paintings)
         });
 });
+
 app.get('/getMyOrders/:usermail',(req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
@@ -150,6 +159,7 @@ app.get('/deletemycart/:usermail/:paintingname1',(req, res) => {
     })
 
 });
+
 
 app.post('/addwork',function(req,res){
     res.header('Access-Control-Allow-Origin','*');

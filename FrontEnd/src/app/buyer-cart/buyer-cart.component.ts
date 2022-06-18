@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BackendDataService } from '../services/backend-data.service';
+
+//import  {ArtModel} from '../services/ArtModel';
 import { MyCartModel } from '../services/MyCartModel';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-buyer-cart',
@@ -10,16 +13,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./buyer-cart.component.css']
 })
 export class BuyerCartComponent implements OnInit {
+// <<<<<<< adminCheck-branch
+//   myCart:ArtModel[]=[]
+//   constructor(private _Activatedroute:ActivatedRoute, private bdata:BackendDataService) { }
+//   purchased:any=false;
+//   idarray: string[] = [];
+//   namearray: string[] = []; 
+//   pricearray: string[] = [];
+//   imagearray: string[] = [];
+//   myCart2: object[] = [];
+// =======
   myCart:MyCartModel[]=[]
   constructor(private _Activatedroute:ActivatedRoute,private bdata:BackendDataService, private router:Router) { }
   purchased:any=false;
+
   id: any;
+  name1:any;
+  // : [] = [];
   name:any;
   price:any; 
   artist:any;
   dimension:any;
   category:any;
   image:any;
+  
 
   ngOnInit(): void {
     this._Activatedroute.paramMap.subscribe(params => { 
@@ -30,13 +47,16 @@ export class BuyerCartComponent implements OnInit {
       this.dimension = params.get('dimension'); 
       this.category=params.get('category');
       this.image=params.get('image');
-      console.log(this.id)
+      // console.log(this.id)
+      
   });
+
   var usermail=localStorage.getItem('usermail')
   this.bdata.getMyCart(usermail).subscribe((data)=>{
     this.myCart=JSON.parse(JSON.stringify(data));
     console.log("mycart:"+this.myCart)
 })
+
   }
 
 toOrders(paintingname1:any,price1:any,dimension1:any,category1:any,image1:any){
