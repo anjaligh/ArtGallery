@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BackendDataService } from '../services/backend-data.service';
-import  {ArtModel} from '../services/ArtModel'
+
+//import  {ArtModel} from '../services/ArtModel';
+import { MyCartModel } from '../services/MyCartModel';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-buyer-cart',
@@ -9,14 +13,20 @@ import  {ArtModel} from '../services/ArtModel'
   styleUrls: ['./buyer-cart.component.css']
 })
 export class BuyerCartComponent implements OnInit {
-  myCart:ArtModel[]=[]
-  constructor(private _Activatedroute:ActivatedRoute, private bdata:BackendDataService) { }
+// <<<<<<< adminCheck-branch
+//   myCart:ArtModel[]=[]
+//   constructor(private _Activatedroute:ActivatedRoute, private bdata:BackendDataService) { }
+//   purchased:any=false;
+//   idarray: string[] = [];
+//   namearray: string[] = []; 
+//   pricearray: string[] = [];
+//   imagearray: string[] = [];
+//   myCart2: object[] = [];
+// =======
+  myCart:MyCartModel[]=[]
+  constructor(private _Activatedroute:ActivatedRoute,private bdata:BackendDataService, private router:Router) { }
   purchased:any=false;
-  idarray: string[] = [];
-  namearray: string[] = []; 
-  pricearray: string[] = [];
-  imagearray: string[] = [];
-  myCart2: object[] = [];
+
   id: any;
   name1:any;
   // : [] = [];
@@ -40,43 +50,34 @@ export class BuyerCartComponent implements OnInit {
       // console.log(this.id)
       
   });
-  var length = this.idarray.push(this.id);
-  console.log(this.idarray)
-  var i:number;
-  // for (i=0;i<length;i++){
-    const idValue=this.id
-    // console.log("forloop"+this.id);
-    this.bdata.getMyCart(idValue).subscribe((data)=>{
-      console.log("my paintings");
-      console.log(data);
-      this.myCart=JSON.parse(JSON.stringify(data));
-      console.log("mycart");
-      console.log(this.myCart);
-      
 
-    //   this.bdata.storeMyCart(idValue).subscribe((data)=>{
-    //     console.log("my paintings");
-    //     console.log(data);
-    //     this.myCart=JSON.parse(JSON.stringify(data));
-    //     console.log("mycart");
-    //     console.log(this.myCart);
-        
-        
-    // })
-  //     // let item1 =this.myCart.find(i => i._id === this.id);
-  //     // console.log("arrayfind:"+this.myCart.values)
-      
-  })
-  
-  // }
-//   this.bdata.getCharcoal().subscribe((data)=>{
-//     this.charcoal=JSON.parse(JSON.stringify(data));
-//     console.log(this.charcoal)
-// })
+  var usermail=localStorage.getItem('usermail')
+  this.bdata.getMyCart(usermail).subscribe((data)=>{
+    this.myCart=JSON.parse(JSON.stringify(data));
+    console.log("mycart:"+this.myCart)
+})
+
   }
-purchaseAlert(){
-  alert(`Item Purchased!! Check "My Orders" `);
-  this.purchased=true;
-}
 
+toOrders(paintingname1:any,price1:any,dimension1:any,category1:any,image1:any){
+    var usermail=localStorage.getItem('usermail')
+      const orderDetails={
+        buyeremail:usermail,
+        price:price1,
+        dimension:dimension1,
+        category:category1,
+        paintingname:paintingname1,
+        image : image1
+      }
+      console.log(orderDetails);
+      this.bdata.addOrders(orderDetails).subscribe(data=>{
+        console.log(data)
+      })
+      this.bdata.deleteCart(usermail,paintingname1).subscribe(data=>{
+        console.log(data)
+      })
+      alert(`Item Purchased!  Check "My Orders" `);
+  this.purchased=true;
+  this.router.navigate(['/buyer/border'])
+}
 }
