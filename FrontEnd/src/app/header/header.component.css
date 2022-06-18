@@ -9,9 +9,6 @@
 .navbar-brand img{
     z-index: 2;
 }
-.nav-item{
-    padding-right: 4vw;
-}
 .active{
     font-weight: bold;
 }

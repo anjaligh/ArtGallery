@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-
+import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +18,9 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { WatercolorComponent } from './watercolor/watercolor.component';
 import { AcrylicComponent } from './acrylic/acrylic.component';
 import { MuralComponent } from './mural/mural.component';
+import { CharcoalComponent } from './charcoal/charcoal.component';
+import { HeaderComponent } from './header/header.component';
+
 
 import { ProductComponent } from './product/product.component';
 
@@ -33,9 +38,14 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { BuyerhistoryComponent } from './buyerhistory/buyerhistory.component';
 import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component';
 import { AdminComponent } from './admin/admin.component';
-
-import { HeaderComponent } from './header/header.component';
-
+import { AddworkComponent } from './addwork/addwork.component';
+import { AddworkformComponent } from './addworkform/addworkform.component';
+import { SellercartComponent } from './sellercart/sellercart.component';
+import { CustomvalidatorsService } from './services/customvalidators.service';
+import { AuthservicesService } from './services/authservices.service';
+import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
+import { BuyerCartComponent } from './buyer-cart/buyer-cart.component';
+import { AdminCartComponent } from './admin-cart/admin-cart.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +61,7 @@ import { HeaderComponent } from './header/header.component';
     WatercolorComponent,
     AcrylicComponent,
     MuralComponent,
+    CharcoalComponent,
     ProductComponent,
     FooterComponent,
     SellerComponent,
@@ -63,17 +74,29 @@ import { HeaderComponent } from './header/header.component';
     BuyerhistoryComponent,
     BuyerwishlistComponent,
     AdminComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddworkComponent,
+    AddworkformComponent,
+    SellercartComponent,
+    BuyerProfileComponent,
+    BuyerCartComponent,
+    AdminCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
     SlickCarouselModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [CustomvalidatorsService,AuthservicesService,{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

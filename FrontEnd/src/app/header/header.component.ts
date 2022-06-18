@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthservicesService } from '../services/authservices.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth:AuthservicesService,private routes:Router) { }
 
   ngOnInit(): void {
   }
-
+  logOut(){
+localStorage.removeItem('token')
+this.routes.navigate(['/'])
+  }
+  
 }

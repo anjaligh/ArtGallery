@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendDataService } from '../services/backend-data.service';
+import  {ArtModel} from '../services/ArtModel'
 
 @Component({
   selector: 'app-watercolor',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./watercolor.component.css']
 })
 export class WatercolorComponent implements OnInit {
-
-  constructor() { }
+  watercolor:ArtModel[]=[]
+  constructor(private bdata:BackendDataService) { }
 
   ngOnInit(): void {
-  }
-
+    this.bdata.getWatercolor().subscribe((data)=>{
+      this.watercolor=JSON.parse(JSON.stringify(data));
+      console.log(this.watercolor)
+  })
+}
 }
