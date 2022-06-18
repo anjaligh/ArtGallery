@@ -73,7 +73,10 @@ toOrders(paintingname1:any,price1:any,dimension1:any,category1:any,image1:any){
       this.bdata.addOrders(orderDetails).subscribe(data=>{
         console.log(data)
       })
-      this.bdata.deleteCart(usermail,paintingname1).subscribe(data=>{
+      this.bdata.deleteCart(usermail).subscribe(data=>{
+        console.log(data)
+      })
+      this.bdata.deletePainting(paintingname1).subscribe(data=>{
         console.log(data)
       })
       alert(`Item Purchased!  Check "My Orders" `);

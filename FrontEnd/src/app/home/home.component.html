@@ -138,18 +138,21 @@
 
 <!-- Gallery -->
 
-    <div class="strip2">
+    <div class="strip2" id="artiststrip">
       <h1 style="padding-top:50px ;">Know Our Artists</h1>
       <!-- <h1 style="padding-top:100px ;"></h1> -->
     </div>
-  <ngx-slick-carousel class="carousel" 
-    #slickModal="slick-carousel" 
-    [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-    <a href=""><img src="{{ slide.img }}" alt="" width="300px" height="300px"></a>
-    <h6>{{slide.artist}}</h6> 
+    <div id="artistcarousel">
+      <ngx-slick-carousel class="carousel" 
+      #slickModal="slick-carousel" 
+      [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <a href=""><img src="{{ slide.img }}" alt="" width="300px" height="300px"></a>
+      <h6>{{slide.artist}}</h6> 
+      </div>
+    </ngx-slick-carousel>
     </div>
-  </ngx-slick-carousel>
+  
   <br><br>
 
   <div class="strip2">

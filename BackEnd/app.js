@@ -135,11 +135,11 @@ app.get('/getMyOrders/:usermail',(req, res) => {
             res.send(paintings)
         });
 });
-app.get('/deletemycart/:usermail/:paintingname1',(req, res) => {
+app.get('/deletemycart/:usermail',(req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
     const mail=req.params.usermail
-    const painting=req.params.paintingname1
+    // const painting=req.params.paintingname1
     console.log("deleteconsole"+mail)
     cartData.findOneAndDelete({ "buyeremail": mail }, function (err, docs) {
         if (err){
@@ -149,6 +149,14 @@ app.get('/deletemycart/:usermail/:paintingname1',(req, res) => {
             console.log("Deleted User : ", docs);
         }
     })
+    
+
+});
+app.get('/deletePainting/:paintingname1',(req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    // const mail=req.params.usermail
+    const painting=req.params.paintingname1
     PaintingData.findOneAndDelete({ "name": painting }, function (err, docs) {
         if (err){
             console.log(err)
@@ -157,6 +165,7 @@ app.get('/deletemycart/:usermail/:paintingname1',(req, res) => {
             console.log("Deleted User : ", docs);
         }
     })
+    
 
 });
 
