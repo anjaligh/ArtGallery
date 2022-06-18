@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const PaintingData = require('./src/model/PaintingData');
+const cartData = require('./model/cartModel');
+const orderData= require('./model/orderModel')
 const cors = require('cors');
 const multer  = require('multer');
 const bodyparser = require('body-parser');
@@ -104,6 +106,50 @@ app.get('/getMyPaintings/:usermail',(req, res) => {
             res.send(paintings)
         });
 });
+app.get('/getMyCart/:usermail',(req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    const mail=req.params.usermail
+    cartData.find({ "buyeremail": mail })
+        .then((paintings) => {
+            console.log(paintings)
+            res.send(paintings)
+        });
+});
+app.get('/getMyOrders/:usermail',(req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    const mail=req.params.usermail
+    orderData.find({ "buyeremail": mail })
+        .then((paintings) => {
+            console.log(paintings)
+            res.send(paintings)
+        });
+});
+app.get('/deletemycart/:usermail/:paintingname1',(req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    const mail=req.params.usermail
+    const painting=req.params.paintingname1
+    console.log("deleteconsole"+mail)
+    cartData.findOneAndDelete({ "buyeremail": mail }, function (err, docs) {
+        if (err){
+            console.log(err)
+        }
+        else{
+            console.log("Deleted User : ", docs);
+        }
+    })
+    PaintingData.findOneAndDelete({ "name": painting }, function (err, docs) {
+        if (err){
+            console.log(err)
+        }
+        else{
+            console.log("Deleted User : ", docs);
+        }
+    })
+
+});
 
 app.post('/addwork',function(req,res){
     res.header('Access-Control-Allow-Origin','*');
@@ -126,6 +172,39 @@ app.post('/addwork',function(req,res){
     var newPainting=new PaintingData(newWork);
     newPainting.save();
 })
+app.post('/addcart',function(req,res){
+    res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    console.log('hello backend')
+    console.log("buyeremail"+req.body.buyeremail);
+    var newcartdata={
+        buyeremail:req.body.buyeremail,
+        paintingname:req.body.paintingname,
+        category:req.body.category,
+        image:req.body.image,
+        price:req.body.price,
+        dimension:req.body.dimension
+    }
+    var mynewCart=new cartData(newcartdata);
+    mynewCart.save();
+})
+app.post('/addorders',function(req,res){
+    res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    console.log('hello backend')
+    console.log("buyeremail"+req.body.buyeremail);
+    var neworderdata={
+        buyeremail:req.body.buyeremail,
+        paintingname:req.body.paintingname,
+        category:req.body.category,
+        image:req.body.image,
+        price:req.body.price,
+        dimension:req.body.dimension
+    }
+    var mynewOrder=new orderData(neworderdata);
+    mynewOrder.save();
+})
+
 app.listen(3000, function () {
     console.log('listening to port 3000')
 });

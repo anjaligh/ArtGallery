@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BackendDataService } from '../services/backend-data.service';
+import { MyCartModel } from '../services/MyCartModel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buyer-cart',
@@ -7,10 +10,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./buyer-cart.component.css']
 })
 export class BuyerCartComponent implements OnInit {
-
-  constructor(private _Activatedroute:ActivatedRoute) { }
+  myCart:MyCartModel[]=[]
+  constructor(private _Activatedroute:ActivatedRoute,private bdata:BackendDataService, private router:Router) { }
   purchased:any=false;
-
   id: any;
   name:any;
   price:any; 
@@ -30,10 +32,32 @@ export class BuyerCartComponent implements OnInit {
       this.image=params.get('image');
       console.log(this.id)
   });
+  var usermail=localStorage.getItem('usermail')
+  this.bdata.getMyCart(usermail).subscribe((data)=>{
+    this.myCart=JSON.parse(JSON.stringify(data));
+    console.log("mycart:"+this.myCart)
+})
   }
-purchaseAlert(){
-  alert(`Item Purchased!! Check "My Orders" `);
-  this.purchased=true;
-}
 
+toOrders(paintingname1:any,price1:any,dimension1:any,category1:any,image1:any){
+    var usermail=localStorage.getItem('usermail')
+      const orderDetails={
+        buyeremail:usermail,
+        price:price1,
+        dimension:dimension1,
+        category:category1,
+        paintingname:paintingname1,
+        image : image1
+      }
+      console.log(orderDetails);
+      this.bdata.addOrders(orderDetails).subscribe(data=>{
+        console.log(data)
+      })
+      this.bdata.deleteCart(usermail,paintingname1).subscribe(data=>{
+        console.log(data)
+      })
+      alert(`Item Purchased!  Check "My Orders" `);
+  this.purchased=true;
+  this.router.navigate(['/buyer/border'])
+}
 }

@@ -26,10 +26,27 @@ export class BackendDataService {
     return this.http.get('http://localhost:3000/acrylic')
   }
   addPainting(data: any){
-    console.log(data);
+    console.log("addpaintingpost"+data);
     return this.http.post<any>('http://localhost:3000/addwork',data)
+  }
+  addCart(cartDetails:any){
+    console.log("cartdatapost:"+cartDetails);
+    return this.http.post<any>('http://localhost:3000/addcart',cartDetails)
+  }
+  addOrders(orderDetails:any){
+    console.log("cartdatapost:"+orderDetails);
+    return this.http.post<any>('http://localhost:3000/addorders',orderDetails)
   }
   getMypaintings(usermail:any){
     return this.http.get('http://localhost:3000/getMyPaintings/'+usermail)
+  }
+  getMyCart(usermail:any){
+    return this.http.get('http://localhost:3000/getMyCart/'+usermail)
+  }
+  getMyOrder(usermail:any){
+    return this.http.get('http://localhost:3000/getMyOrders/'+usermail)
+  }
+  deleteCart(usermail:any,paintingname1:any){
+    return this.http.get('http://localhost:3000/deletemycart/'+usermail+paintingname1)
   }
 }
