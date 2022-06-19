@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
             if(res.userrole=="Admin")
             {
-            this.router.navigate(['admin']);
+            this.router.navigate(['admin/adminprofile']);
             alert(res.message);
 
             localStorage.setItem('username',res.username)

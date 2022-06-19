@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 
 const PaintingData = require('./src/model/PaintingData');
 const cartData = require('./model/cartModel');
-const orderData= require('./model/orderModel')
+const orderData= require('./model/orderModel');
+const registerData = require('./model/registermodel')
 const cors = require('cors');
 const multer  = require('multer');
 const bodyparser = require('body-parser');
@@ -39,7 +40,7 @@ app.use('/users', userauth);
 app.get('/mural', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    PaintingData.find({ category: 'mural' })
+    PaintingData.find({ category: 'Mural' })
         .then((paintings) => {
             console.log(paintings)
             res.send(paintings)
@@ -50,7 +51,7 @@ app.get('/mural', (req, res) => {
 app.get('/abstract', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    PaintingData.find({ category: 'abstract' })
+    PaintingData.find({ category: 'Abstract' })
         .then((paintings) => {
             console.log(paintings)
             res.send(paintings)
@@ -60,7 +61,7 @@ app.get('/abstract', (req, res) => {
 app.get('/watercolor', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    PaintingData.find({ category: 'watercolor' })
+    PaintingData.find({ category: 'Watercolor' })
         .then((paintings) => {
             console.log(paintings)
             res.send(paintings)
@@ -70,7 +71,7 @@ app.get('/watercolor', (req, res) => {
 app.get('/pastel', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    PaintingData.find({ category: 'pastel' })
+    PaintingData.find({ category: 'Pastel' })
         .then((paintings) => {
             console.log(paintings)
             res.send(paintings)
@@ -80,7 +81,7 @@ app.get('/pastel', (req, res) => {
 app.get('/acrylic', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    PaintingData.find({ category: 'acrylic' })
+    PaintingData.find({ category: 'Acrylic' })
         .then((paintings) => {
             console.log(paintings)
             res.send(paintings)
@@ -90,7 +91,7 @@ app.get('/acrylic', (req, res) => {
 app.get('/charcoal', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    PaintingData.find({ category: 'charcoal' })
+    PaintingData.find({ category: 'Charcoal' })
         .then((paintings) => {
             console.log(paintings)
             res.send(paintings)
@@ -135,6 +136,18 @@ app.get('/getMyOrders/:usermail',(req, res) => {
             res.send(paintings)
         });
 });
+app.get('/getuserprofile/:usermail',(req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    const mail=req.params.usermail
+    console.log("usermailbackend"+mail);
+    registerData.findOne({ "email": mail })
+        .then((user) => {
+            console.log(user)
+            res.send(user)
+        });
+});
+
 app.get('/deletemycart/:usermail',(req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');

@@ -50,6 +50,10 @@ export class BackendDataService {
   getMyOrder(usermail:any){
     return this.http.get('http://localhost:3000/getMyOrders/'+usermail)
   }
+  getuserProfile(usermail:any){
+    console.log("usermailService "+usermail);
+    return this.http.get('http://localhost:3000/getuserprofile/'+usermail)
+  }
   deleteCart(usermail:any){
     return this.http.get('http://localhost:3000/deletemycart/'+usermail)
 
