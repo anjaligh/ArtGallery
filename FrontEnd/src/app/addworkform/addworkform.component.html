@@ -1,7 +1,7 @@
 <div class="align">
   <div class="border">
       <form [formGroup]="addWorkForm"(ngSubmit)="addWork()">
-          <p class="heading">Personal Information</p>
+          <!-- <p class="heading">Personal Information</p>
           <hr>
 
           <div class="mb-3">
@@ -33,10 +33,18 @@
           <div class="mb-3">
             <label for="category" class="form-label">Upload your Image</label>
             <input type="file" formControlName="artistimage" name="artistimage" class="form-control" accept="image/png, image/gif, image/jpeg">
-          </div>
+          </div> -->
 
           <p class="heading">Painting Details</p>
           <hr>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+              <label for="email" class="form-label">Email ID</label>
+              <input type="text" class="form-control" formControlName="email" name="email" required >
+              </div>
+            </div>
+          </div>
           <div class="mb-3">
               <label for="painting-name" class="form-label">Name of Painting</label>
               <input type="text" class="form-control" formControlName="paintingname"  name="paintingname"  required >
@@ -51,7 +59,7 @@
                   <label for="category" class="form-label">Painting Category</label>
                   <select class="form-select" aria-label="Default select example" formControlName="category"  name="category"  required>
                     <option selected ></option>
-                    <option value="Abstract">Abstract</option>
+                    <option value="abstract">Abstract</option>
                     <option value="Acrylic">Acrylic</option>
                     <option value="Mural">Mural</option>
                     <option value="Charcoal">Charcoal</option>

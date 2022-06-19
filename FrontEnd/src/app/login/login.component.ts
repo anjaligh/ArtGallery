@@ -42,12 +42,15 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('token',res.token)
             localStorage.setItem('userrole',res.userrole)
             localStorage.setItem('usermail',res.useremail)
+
             localStorage.setItem('username',res.username)
+
+
             if(res.userrole=="Admin")
             {
             this.router.navigate(['admin']);
             alert(res.message);
-            
+
             localStorage.setItem('username',res.username)
             }
             else if(res.userrole=="Seller")

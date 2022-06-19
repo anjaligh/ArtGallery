@@ -3,7 +3,11 @@
     <div class="sidebar">
       <div class="side-header">
         <h1>Welcome</h1>
+
         <p>{{username}}</p>
+
+        <p>User</p>
+
       </div>
       <nav class="sidenav">
         <input type="radio" class="checkbox" name="radio" id="0" checked />
@@ -15,7 +19,11 @@
           ><a routerLink="sellerhistory"> Seller's History</a></label
         >
         <input type="radio" class="checkbox" name="radio" id="2" />
+
         <label for="1" class="button" ><a routerLink="/admin/addwork"> Add Painting</a></label>
+
+        <label for="1" class="button" ><a routerLink="seller/addwork"> Add Painting</a></label>
+
         <input type="radio" class="checkbox" name="radio" id="2"> 
         <label for="1" class="button" ><a routerLink="cart/:id/:name/:price/:dimension/:category/:artist/:image"> Cart</a></label>
         <input type="radio" class="checkbox" name="radio" id="2">

@@ -22,6 +22,13 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
 import { SellercartComponent } from './sellercart/sellercart.component';
 
 import { AuthguardGuard } from './guard/authguard.guard';
+import { BuyerComponent } from './buyer/buyer.component';
+import { BuyerwishlistComponent } from './buyerwishlist/buyerwishlist.component';
+import { AdminComponent } from './admin/admin.component';
+import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
+import { BuyerCartComponent } from './buyer-cart/buyer-cart.component';
+import { BuyerhistoryComponent } from './buyerhistory/buyerhistory.component';
+import { AdminCartComponent } from './admin-cart/admin-cart.component';
 
 
 
@@ -38,17 +45,29 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'mural/product',component:ProductComponent},
+
     
+
+  {path:'admin',component:AdminComponent,children:[
+                    {path:'acart/:id/:name/:price/:dimension/:category/:artist/:image',component:AdminCartComponent},
+  ]},
+  {path:'buyer',component:BuyerComponent,children:[
+                              {path:'bwishlist',component:BuyerwishlistComponent},
+                              {path:'bprofile',component:BuyerProfileComponent},
+                              {path:'bcart/:id/:name/:price/:dimension/:category/:artist/:image',component:BuyerCartComponent},
+                              {path:'border',component:BuyerhistoryComponent}
+  ]},
+
   {path:'seller',
-  canActivate:[AuthguardGuard],
+  //canActivate:[AuthguardGuard],
   component:SellerComponent,children:[
                     {path:'profile',component:SellerprofileComponent},
                     {path:'wishlist',component:SellerwishlistComponent},
                     {path:'sellerhistory',component:SellerhistoryComponent},
                     {path:'addwork',component:AddworkformComponent},
-                    {path:'cart',component:SellercartComponent}]},
+                    {path:'cart/:id/:name/:price/:dimension/:category/:artist/:image',component:SellercartComponent}]},
   {path:'charcoal',component:CharcoalComponent},
-  {path:'product/:id/:name/:price/:dimension/:category/:artist',component:ProductComponent},
+  {path:'product/:id/:name/:price/:dimension/:category/:artist/:image',component:ProductComponent}
   
 
 ];

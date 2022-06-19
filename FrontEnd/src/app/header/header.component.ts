@@ -16,5 +16,5 @@ export class HeaderComponent implements OnInit {
 localStorage.removeItem('token')
 this.routes.navigate(['/'])
   }
-
+  
 }

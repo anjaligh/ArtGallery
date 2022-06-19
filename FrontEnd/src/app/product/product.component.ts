@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthservicesService } from '../services/authservices.service';
+import { BackendDataService } from '../services/backend-data.service';
 
 @Component({
   selector: 'app-product',
@@ -33,13 +36,14 @@ export class ProductComponent implements OnInit {
   beforeChange(e: any) {
     console.log('beforeChange');
   }
-  constructor(private _Activatedroute:ActivatedRoute) {}
+  constructor(private _Activatedroute:ActivatedRoute, private router:Router,public auth:AuthservicesService, private backendData:BackendDataService) {}
    id: any;
    name:any;
    price:any;
    artist:any;
    dimension:any;
    category:any;
+   image:any;
   
   ngOnInit(): void {
     this._Activatedroute.paramMap.subscribe(params => { 
@@ -49,10 +53,37 @@ export class ProductComponent implements OnInit {
       this.artist = params.get('artist');  
       this.dimension = params.get('dimension'); 
       this.category=params.get('category');
+      this.image=params.get('image');
       console.log(this.id)
   });
   }
-  
+  toCart(){
+    var user=localStorage.getItem('userrole')
+    console.log("userroleee:"+user);
+    var usermail=localStorage.getItem('usermail')
+    if(user=="Buyer"){
+      const cartDetails={
+        buyeremail:usermail,
+        price:this.price,
+        dimension:this.dimension,
+        category:this.category,
+        paintingname:this.name,
+        image : this.image
+      }
+      console.log(cartDetails);
+      this.backendData.addCart(cartDetails).subscribe(data=>{
+        console.log(data)
+      }) 
+      this.router.navigate(['/buyer/bcart',this.id,this.name,this.price,this.dimension,this.category,this.artist,this.image]);
+    }
+    else if(user=="Seller"){
+      this.router.navigate(['/seller/cart',this.id,this.name,this.price,this.dimension,this.category,this.artist,this.image]);
+    }
+    else if(user=="Admin"){
+      this.router.navigate(['/admin/acart',this.id,this.name,this.price,this.dimension,this.category,this.artist,this.image]);
+    }
+    
+  }
 }
 
   
