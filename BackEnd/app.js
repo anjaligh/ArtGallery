@@ -9,6 +9,7 @@ const cors = require('cors');
 const multer  = require('multer');
 const bodyparser = require('body-parser');
 const userauth = require('./routes/userauthrouter');
+const checkAuth = require('./middleware/check-auth');
 
 var app = new express;
 
@@ -183,7 +184,7 @@ app.get('/deletePainting/:paintingname1',(req, res) => {
 });
 
 
-app.post('/addwork',function(req,res){
+app.post('/addwork',checkAuth, function(req,res){
     res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
     console.log('hello backend')
