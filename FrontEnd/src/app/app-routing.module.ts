@@ -72,7 +72,7 @@ const routes: Routes = [
                     {path:'addwork',component:AddworkformComponent},
                     {path:'cart/:id/:name/:price/:dimension/:category/:artist/:image',component:SellercartComponent}]},
   {path:'charcoal',component:CharcoalComponent},
-  {path:'product/:id/:name/:price/:dimension/:category/:artist/:image',component:ProductComponent}
+  {path:'product/:id/:name/:price/:dimension/:category/:artist/:image/:description',component:ProductComponent}
   
 
 ];

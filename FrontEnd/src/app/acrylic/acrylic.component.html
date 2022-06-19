@@ -106,10 +106,10 @@
                                         <a routerLink="#" class="title">{{i.paintingname}}</a>
                                         <div class="price-wrap mt-2">
                                             <span class="price">Rs {{i.price}}</span>
-                                            <del class="price-old">Rs 1980</del>
+                                            <!-- <del class="price-old">Rs 1980</del> -->
                                         </div> <!-- price-wrap.// -->
                                     </div>
-                                    <a [routerLink]="['/product', i._id,i.paintingname,i.price,i.dimension,i.category,i.artist,i.image]" class="btn btn-block btn-primary">View Details</a>
+                                    <a [routerLink]="['/product', i._id,i.paintingname,i.price,i.dimension,i.category,i.artist,i.image,i.description]" class="btn btn-block btn-primary">View Details</a>
                                 </figcaption>
                             </figure>
                         </div> <!-- col.// -->

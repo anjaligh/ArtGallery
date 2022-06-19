@@ -8,6 +8,7 @@ export class ArtModel{
     public category : String,
     public dimension : String,
     public price : String,
-    public image : String
+    public image : String,
+    public description:String
     ){}
 }
