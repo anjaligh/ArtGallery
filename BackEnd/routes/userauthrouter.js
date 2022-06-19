@@ -24,17 +24,20 @@ req.userId=payload.subject
 next()
   }
 
-router.post('/register', (req, res) => {
+router.post('/register',(req, res) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
     if (err) {
       return res.json({ success: false, message: "Hashing issue" })
     }
     else {
       const user = new registerData({
-        name: req.body.name,
+        username: req.body.name,
         email: req.body.email1,
         userrole: req.body.userrole,
-        password: hash
+        password: hash,
+        contactno:req.body.contactno,
+        address:req.body.address
+
       })
       user.save()
         .then((result) => {
@@ -56,7 +59,7 @@ router.post('/register', (req, res) => {
 
 });
 
-router.post('/login', (req, res) => {
+router.post('/login',(req, res) => {
   //res.json("Hai");
   registerData.find({ email: req.body.email1 })
     .exec()
@@ -112,6 +115,59 @@ router.get('/buyer', checkAuth, (req, res) => {
       })
     
 })
+router.get('/profile',checkAuth,(req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+  registerData.find()
+      .then((profiles) => {
+         // console.log(users)
+          res.send(profiles)
+      });
+});
+router.get('/:id', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+  const id = req.params.id;
+  registerData.findOne({"_id":id})
+  .then((profileItem)=>{
+      res.send(profileItem);
+  });
+})
+
+  router.delete('/remove/:id',(req,res)=>{
+   
+    id = req.params.id;
+    registerData.findByIdAndDelete({"_id":id})
+    .then(()=>{
+        console.log('success')
+        res.send();
+    })
+  })
+
+
+
+router.put('/update',(req,res)=>{
+  console.log(req.body)
+  id=req.body._id,
+  //profileId= req.body.profileId,
+  name = req.body.name,
+  email= req.body.email,
+  userrole = req.body.userrole,
+ contactno= req.body.contactno,
+ address=req.body.address
+ registerData.findByIdAndUpdate({"_id":id},
+                              {$set:{
+                                //"profileId":productId,
+                                "name":name,
+                                "email":email,
+                                "userrole":userrole,
+                               "contactno":contactno,
+                               "address":address}})
+ .then(function(){
+     res.send();
+ })
+})
+
 
 
 

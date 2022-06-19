@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buyer.component.css']
 })
 export class BuyerComponent implements OnInit {
-
+  username= localStorage.getItem('username')
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

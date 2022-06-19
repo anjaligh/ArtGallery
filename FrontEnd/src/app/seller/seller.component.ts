@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class SellerComponent implements OnInit {
 
   constructor() { }
-
+ username:any= localStorage.getItem('username')
+ 
   ngOnInit(): void {
+    
   }
 
 }

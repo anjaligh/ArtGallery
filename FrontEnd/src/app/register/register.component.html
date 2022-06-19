@@ -16,8 +16,10 @@
                 <p>Earth without art is just “eh”<br>Interactions between the elements and principles <br>of art help
                     artists to organize sensorially pleasing works of art while also giving viewers a framework
                     within which to analyze and discuss aesthetic ideas.</p>
+                    <p>Art is a diverse range of human activity, and resulting product, that involves creative or imaginative talent expressive of technical proficiency, beauty, emotional power, or conceptual ideas.</p>
               
-
+                    <p>Art is a diverse range of human activity, and resulting product, that involves creative or imaginative talent expressive of technical proficiency, beauty, emotional power, or conceptual ideas.</p>
+                    <p>Art is a diverse range of human activity, and resulting product, that involves creative or imaginative talent expressive of technical proficiency, beauty, emotional power, or conceptual ideas.</p>
             </div>
         </div>
 
@@ -60,6 +62,20 @@
                                 letter and 1 number
             </span>
                     <br><br><br>
+                    <label><b>Contact Number</b></label> <input id="contactno" name='contactno' formControlName="contactno" type="text" required><br><br>
+                    <span class="text-danger"
+                    *ngIf="(registerForm.controls['contactno'].touched||submitted) && registerForm.controls['contactno'].errors?.['required']">
+                    Contact No is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.controls['contactno'].touched && registerForm.controls['contactno'].errors?.['pattern']">
+                    Enter a valid Contact number
+                </span><br><br>
+                <label><b>Address</b></label> <input id="address" name='address' formControlName="address" type="text" required><br><br>
+                <span class="text-danger"
+                *ngIf="(registerForm.controls['address'].touched||submitted) && registerForm.controls['address'].errors?.['required']">
+                Address is required
+            </span><br><br>
                     <span class="alert alert-info">Please select one User Role</span><br><br>
                     <label for="userole"><b>User Role<h3></h3> <span></span>
                         <p></p> 

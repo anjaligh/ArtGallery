@@ -43,9 +43,14 @@ import { AddworkformComponent } from './addworkform/addworkform.component';
 import { SellercartComponent } from './sellercart/sellercart.component';
 import { CustomvalidatorsService } from './services/customvalidators.service';
 import { AuthservicesService } from './services/authservices.service';
+
+import { AdminprofileComponent } from './adminprofile/adminprofile.component';
+import { AdminprofileupdateComponent } from './adminprofileupdate/adminprofileupdate.component';
+
 import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 import { BuyerCartComponent } from './buyer-cart/buyer-cart.component';
 import { AdminCartComponent } from './admin-cart/admin-cart.component';
+
 
 @NgModule({
   declarations: [
@@ -78,9 +83,14 @@ import { AdminCartComponent } from './admin-cart/admin-cart.component';
     AddworkComponent,
     AddworkformComponent,
     SellercartComponent,
+
+    AdminprofileComponent,
+    AdminprofileupdateComponent
+
     BuyerProfileComponent,
     BuyerCartComponent,
     AdminCartComponent
+
   ],
   imports: [
     BrowserModule,

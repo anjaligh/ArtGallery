@@ -45,6 +45,9 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'mural/product',component:ProductComponent},
+
+    
+
   {path:'admin',component:AdminComponent,children:[
                     {path:'acart/:id/:name/:price/:dimension/:category/:artist/:image',component:AdminCartComponent},
   ]},
@@ -54,6 +57,7 @@ const routes: Routes = [
                               {path:'bcart/:id/:name/:price/:dimension/:category/:artist/:image',component:BuyerCartComponent},
                               {path:'border',component:BuyerhistoryComponent}
   ]},
+
   {path:'seller',
   //canActivate:[AuthguardGuard],
   component:SellerComponent,children:[
