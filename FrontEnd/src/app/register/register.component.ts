@@ -48,7 +48,7 @@ className=""
     // }
 
     onRegister() {
-
+     
       console.log(this.message);
       this.isProcessing=true;
       this.submitted = true;
@@ -63,18 +63,12 @@ className=""
           if(res.success){
             this.isProcessing=false;
             this.message='Account created'
-
             //alert(window.location.reload());
           
             console.log(this.message)
             this.className='alert alert-success'
             alert("Account Created ")
             window.location.reload();
-
-            //alert("Account created")
-            console.log(this.message)
-            this.className='alert alert-success'
-
           }else 
           {
             this.isProcessing=false;
@@ -83,27 +77,19 @@ className=""
            //alert("Email id already exist or fields are empty")
             console.log(this.message);
             this.className='alert alert-danger'
-
             //window.location.reload();
           }  
           
          // this.registerForm.value==clear();
-
-          }
-
           },
           err => {
             this.isProcessing=false;
             this.message="Server Error";
         //alert("server error")
             this.className='alert alert-info'
-
             //window.location.reload();
           }
          
-
-          }
-
         )
       //}
   

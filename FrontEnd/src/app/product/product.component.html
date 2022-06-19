@@ -16,7 +16,7 @@
             <br><br>
             <div>
 
-              <button type="button" [disabled]="auth.sellerCheck()" (click)="toCart()" class="btn btn-primary btn-block" style="width:80%;text-align: center;">ADD TO
+              <button type="button" [disabled]="!auth.loggedIn() || (auth.loggedIn() && auth.sellerCheck())" (click)="toCart()" class="btn btn-primary btn-block" style="width:80%;text-align: center;">ADD TO
                 CART</button>
               <br><br>
   

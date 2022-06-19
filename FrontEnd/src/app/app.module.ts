@@ -27,6 +27,7 @@ import { ProductComponent } from './product/product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 import { SellerComponent } from './seller/seller.component';
 import { SellerwishlistComponent } from './sellerwishlist/sellerwishlist.component';
@@ -85,7 +86,7 @@ import { AdminCartComponent } from './admin-cart/admin-cart.component';
     SellercartComponent,
 
     AdminprofileComponent,
-    AdminprofileupdateComponent
+    AdminprofileupdateComponent,
 
     BuyerProfileComponent,
     BuyerCartComponent,
@@ -100,7 +101,8 @@ import { AdminCartComponent } from './admin-cart/admin-cart.component';
     BrowserAnimationsModule,
     NgbModule,
     SlickCarouselModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [CustomvalidatorsService,AuthservicesService,{
     provide:HTTP_INTERCEPTORS,

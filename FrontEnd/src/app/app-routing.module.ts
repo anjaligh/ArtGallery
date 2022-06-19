@@ -29,6 +29,8 @@ import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 import { BuyerCartComponent } from './buyer-cart/buyer-cart.component';
 import { BuyerhistoryComponent } from './buyerhistory/buyerhistory.component';
 import { AdminCartComponent } from './admin-cart/admin-cart.component';
+import { AdminprofileupdateComponent } from './adminprofileupdate/adminprofileupdate.component';
+import { AdminprofileComponent } from './adminprofile/adminprofile.component';
 
 
 
@@ -50,7 +52,10 @@ const routes: Routes = [
 
   {path:'admin',component:AdminComponent,children:[
                     {path:'acart/:id/:name/:price/:dimension/:category/:artist/:image',component:AdminCartComponent},
+                    {path:'adminprofile',component:AdminprofileComponent},
+                    {path:'addwork',component:AddworkformComponent},
   ]},
+  {path:'adminprofileupdate',component:AdminprofileupdateComponent},
   {path:'buyer',component:BuyerComponent,children:[
                               {path:'bwishlist',component:BuyerwishlistComponent},
                               {path:'bprofile',component:BuyerProfileComponent},
@@ -59,7 +64,7 @@ const routes: Routes = [
   ]},
 
   {path:'seller',
-  //canActivate:[AuthguardGuard],
+  canActivate:[AuthguardGuard],
   component:SellerComponent,children:[
                     {path:'profile',component:SellerprofileComponent},
                     {path:'wishlist',component:SellerwishlistComponent},

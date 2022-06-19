@@ -21,7 +21,7 @@
               <a class="nav-link" routerLink="contactus" *ngIf="!auth.loggedIn()"  style="color: white;padding-right: 4vw;">ContactUs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="admin" *ngIf="auth.loggedIn() && auth.adminCheck()" style="color: white;padding-right: 4vw;">Profile</a>
+              <a class="nav-link" routerLink="/admin/adminprofile" *ngIf="auth.loggedIn() && auth.adminCheck()" style="color: white;padding-right: 4vw;">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/buyer/bprofile" *ngIf="auth.loggedIn() && auth.buyerCheck()" style="color: white;padding-right: 4vw;">View Profile</a>
