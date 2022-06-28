@@ -19,11 +19,11 @@
               <button id="button1" type="button" [disabled]="!auth.loggedIn() || (auth.loggedIn() && auth.sellerCheck())" (click)="toCart()" class="btn btn-primary btn-block" style="width:98%;text-align: center;">ADD TO
                 CART</button><br><br>
                 <div class="row">
+                  <!-- <div class="col">
+                    <button id="button2" type="button" *ngIf="auth.adminCheck()"  class="btn btn-primary btn-block" style="width:95%;text-align: center;">Edit</button>
+                  </div> -->
                   <div class="col">
-                    <button id="button2" type="button" *ngIf="auth.adminCheck()" (click)="toCart()" class="btn btn-primary btn-block" style="width:95%;text-align: center;">Edit</button>
-                  </div>
-                  <div class="col">
-                    <button id="button2" type="button" *ngIf="auth.adminCheck()" (click)="toCart()" class="btn btn-primary btn-block" style="width:95%;text-align: center;">Delete</button>
+                    <button id="button2" type="button" *ngIf="auth.adminCheck()" (click)="deletePainting()" class="btn btn-primary btn-block" style="width:98%;text-align: center;">Delete</button>
                   </div>
                 </div>
               

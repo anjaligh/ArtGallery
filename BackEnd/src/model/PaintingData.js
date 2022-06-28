@@ -3,7 +3,7 @@ const mongoose= require('mongoose');
 mongoose.connect('mongodb+srv://anjali:anjali1@anjali.5ol6pxz.mongodb.net/demoArt?retryWrites=true&w=majority');
 const Schema=mongoose.Schema;
 var PaintingSchema=new Schema({
-    name : String,
+    artist : String,
     email : String,
     contact : Number,
     address : String,

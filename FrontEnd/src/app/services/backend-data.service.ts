@@ -54,6 +54,9 @@ export class BackendDataService {
     console.log("usermailService "+usermail);
     return this.http.get('http://localhost:3000/getuserprofile/'+usermail)
   }
+  deleteEntry(id:any){
+    return this.http.get('http://localhost:3000/deleteentry/'+id)
+  }
   deleteCart(usermail:any){
     return this.http.get('http://localhost:3000/deletemycart/'+usermail)
 

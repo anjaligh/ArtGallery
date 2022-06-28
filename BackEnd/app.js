@@ -184,13 +184,31 @@ app.get('/deletePainting/:paintingname1',(req, res) => {
 });
 
 
+app.get('/deleteentry/:id',(req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    // const mail=req.params.usermail
+    const paintingid=req.params.id
+    PaintingData.findOneAndDelete({ "_id": paintingid }, function (err, docs) {
+        if (err){
+            console.log(err)
+        }
+        else{
+            console.log("Deleted painting : ", docs);
+        }
+    })
+    
+
+});
+
+
 app.post('/addwork',checkAuth, function(req,res){
     res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
     console.log('hello backend')
     console.log(req.body);
     var newWork={
-        name:req.body.name,
+        artist:req.body.name,
         email:req.body.email,
         contact:req.body.contact,
         address:req.body.address,

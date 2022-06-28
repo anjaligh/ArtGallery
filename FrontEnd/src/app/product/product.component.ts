@@ -86,6 +86,17 @@ export class ProductComponent implements OnInit {
     }
     
   }
+
+  deletePainting(){
+    this.backendData.deleteEntry(this.id).subscribe(data=>{
+      console.log(data);
+      
+    })
+    // window.location.reload();
+    alert('Painting is deleted')
+    this.router.navigate([''])
+
+  }
 }
 
   
